@@ -1,0 +1,377 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="fr" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="65cc4ab3b4c438e07c89be2b677d08369fb62da2" datatype="html">
+        <source>Welcome</source>
+        <target>Bonjour</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/app.component.html</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+      </trans-unit><trans-unit id="92eee6be6de0b11c924e3ab27db30257159c0a7c" datatype="html">
+        <source>Home</source><target>Accueil</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/app.component.html</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
+      </trans-unit><trans-unit id="994363f08f9fbfa3b3994ff7b35c6904fdff18d8" datatype="html">
+        <source>Profile</source><target>Profil</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/app.component.html</context>
+          <context context-type="linenumber">13</context>
+        </context-group>
+      </trans-unit><trans-unit id="6765b4c916060f6bc42d9bb69e80377dbcb5e4e9" datatype="html">
+        <source>Login</source><target>Login</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/app.component.html</context>
+          <context context-type="linenumber">14</context>
+        </context-group>
+      </trans-unit><trans-unit id="bb694b49d408265c91c62799c2b3a7e3151c824d" datatype="html">
+        <source>Logout</source><target>Déconnexion</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/app.component.html</context>
+          <context context-type="linenumber">15</context>
+        </context-group>
+      </trans-unit><trans-unit id="d9cdc641368c365ed11ccf9d740877fb5f178cb3" datatype="html">
+        <source>Red</source><target>Rouge</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/app.component.html</context>
+          <context context-type="linenumber">40</context>
+        </context-group>
+      </trans-unit><trans-unit id="7f12fce1bf3707dc7e7a7ccafef738fabbc11c47" datatype="html">
+        <source>Blue</source><target>Bleu</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/app.component.html</context>
+          <context context-type="linenumber">44</context>
+        </context-group>
+      </trans-unit><trans-unit id="c938dc19531dba7517d8eaeaa5fd3c39077fa7bd" datatype="html">
+        <source>Green</source><target>Vert</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/app.component.html</context>
+          <context context-type="linenumber">48</context>
+        </context-group>
+      </trans-unit><trans-unit id="640eec093c685babaa3265137215e3cc92ad704d" datatype="html">
+        <source>Sign Out</source><target>Se désinscrire</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/app.component.html</context>
+          <context context-type="linenumber">52</context>
+        </context-group>
+      </trans-unit><trans-unit id="37d4203d87e1ccb6f757367d0dca541d2a0f485b" datatype="html">
+        <source>
+Welcome
+        </source>
+        <target>Bonjour</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/home/home.component.html</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="b9b7034c725836132c6ae1520954916d3cc55dd8" datatype="html">
+        <source>In Theater</source>
+        <target>Au Théatre</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/home/home.component.html</context>
+          <context context-type="linenumber">11</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="636fa2540c269d7c838506f871fd8ef27bab4f41" datatype="html">
+        <source>See all Movies</source>
+        <target>Voir tout les Films</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/home/home.component.html</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="bdd3d629e4d967d3df089e75eb9b30e82b35722b" datatype="html">
+        <source>On TV</source>
+        <target>A la TV</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/home/home.component.html</context>
+          <context context-type="linenumber">60</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="d589548e341b4ce7d1651b37f2824776070e1c9f" datatype="html">
+        <source>See all TV Shows</source>
+        <target>Voir toutes les séries Télé</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/home/home.component.html</context>
+          <context context-type="linenumber">61</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3fabc44dce32fba055225c279b253e0397757184" datatype="html">
+        <source>Release Date: </source>
+        <target>Date de sortie: </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/ui/poster-card-view/poster-card.component.html</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5778da62261a0106ee9b6202d124212e6771c131" datatype="html">
+        <source>First Air Date: </source>
+        <target>Première date de diffusion: </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/ui/poster-card-view/poster-card.component.html</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="e95ae009d0bdb45fcc656e8b65248cf7396080d5" datatype="html">
+        <source>Overview</source>
+        <target>Aperçu</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/InTheater/movie/movie.component.html</context>
+          <context context-type="linenumber">10</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/OnTV/tv-show/tv-show.component.html</context>
+          <context context-type="linenumber">19</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1127815c19fd18122603931f3218c0caeb83c376" datatype="html">
+        <source><x id="START_TAG_MAT-ICON" ctype="x-mat-icon" equiv-text="&lt;mat-icon>"/>play_arrow<x id="CLOSE_TAG_MAT-ICON" ctype="x-mat-icon" equiv-text="&lt;/mat-icon>"/> Watch Trailer</source>
+        <target><x id="START_TAG_MAT-ICON" ctype="x-mat-icon" equiv-text="&lt;mat-icon>"/>play_arrow<x id="CLOSE_TAG_MAT-ICON" ctype="x-mat-icon" equiv-text="&lt;/mat-icon>"/> Voir la bande-annonce</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/InTheater/movie/movie.component.html</context>
+          <context context-type="linenumber">13</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="f90ee588422c55bc42c796ccebe7fc7169ec1e79" datatype="html">
+        <source>Top Billed Cast</source>
+        <target>Meilleur casting</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/InTheater/movie/movie.component.html</context>
+          <context context-type="linenumber">29</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="451e2ea39e074b24bcd28bb4028841aaafa99709" datatype="html">
+        <source>Recommended Movies</source>
+        <target>Film Recommandé</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/InTheater/movie/movie.component.html</context>
+          <context context-type="linenumber">54</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="def755457793d5ad40597886d2d317bc5f415a2f" datatype="html">
+        <source>Loading</source>
+        <target>Chargement</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/InTheater/movie/movie.component.html</context>
+          <context context-type="linenumber">68</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1aafc9a7aa965577b62a37fa01dbac1b8cb05baa" datatype="html">
+        <source>Personal Info</source>
+        <target>Infos Personelles</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/actor/actor.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="097b5dfee5665aa0f7daba8b696acecde6445474" datatype="html">
+        <source>Male</source>
+        <target>Homme</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/actor/actor.component.html</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="18f3bafdc69b800737e303bc1cb0753bd9dd3f32" datatype="html">
+        <source>Female</source>
+        <target>Femme</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/actor/actor.component.html</context>
+          <context context-type="linenumber">10</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="657aff851b47eb734f34a78a95899d0948f817ef" datatype="html">
+        <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong>"/>Birthday: <x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong>"/>
+<x id="INTERPOLATION" equiv-text="{{person.birthday}}"/></source>
+        <target><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong>"/>Anniversaire: <x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong>"/>
+<x id="INTERPOLATION" equiv-text="{{person.birthday}}"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/actor/actor.component.html</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4ab8ad2780c7110c42d77e962d58243d23a5b06c" datatype="html">
+        <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong>"/>Place of Birth: <x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong>"/><x id="INTERPOLATION" equiv-text="{{person.place_of_birth}}"/></source>
+        <target><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong>"/>Lieu de naissance: <x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong>"/><x id="INTERPOLATION" equiv-text="{{person.place_of_birth}}"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/actor/actor.component.html</context>
+          <context context-type="linenumber">14</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="604414a4711cb3e84258605b8fd2256b66d5ae99" datatype="html">
+        <source>Biography</source>
+        <target>Biographie</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/actor/actor.component.html</context>
+          <context context-type="linenumber">32</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="b4c5af46ab5971aff1d9b7f2547540a1c83badc2" datatype="html">
+        <source>
+Soon
+        </source>
+        <target>Bientôt</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/actor/actor.component.html</context>
+          <context context-type="linenumber">43</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/actor/actor.component.html</context>
+          <context context-type="linenumber">52</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="387d2b80f05b53867803162c3f41fb3a1692e3fe" datatype="html">
+        <source>
+Soon
+        </source>
+        <target>Bientôt</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/actor/actor.component.html</context>
+          <context context-type="linenumber">46</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="0f7742f5913a2cfcb674e7d51aed6351f3ee98e8" datatype="html">
+        <source>Login to Your Account</source>
+        <target>Se Connecter</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/ui/login/login.component.html</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+      </trans-unit><trans-unit id="ba4f24bf9bf3dc4db3d6bc1b8b63339295f0b806" datatype="html">
+        <source>Sign In</source><target state="new">Sign In</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/ui/login/login.component.html</context>
+          <context context-type="linenumber">17</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="719a57b9e6793cd088907e2c14c256d6e9185920" datatype="html">
+        <source>Sign With Google</source>
+        <target>Se connecter avec Google</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/ui/login/login.component.html</context>
+          <context context-type="linenumber">21</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="72afbd7e6f66b7945b8ad81a58d66576e9169580" datatype="html">
+        <source>Register Here Now</source>
+        <target>S'inscrire ici</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/ui/login/login.component.html</context>
+          <context context-type="linenumber">23</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="0fc0dbcedd4244e916944d5e6b7708c9e715b907" datatype="html">
+        <source>
+Already logged in!
+        </source>
+        <target>Vous êtes déja connecté</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/ui/login/login.component.html</context>
+          <context context-type="linenumber">33</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="cfc2f436ec2beffb042e7511a73c89c372e86a6c" datatype="html">
+        <source>Register</source>
+        <target>S'inscrire</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/ui/register/register.component.html</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6ff536d1d341cd61b4b31a9266567cb7b2ceee89" datatype="html">
+        <source>I Already Have an Account</source>
+        <target>J'ai déjà un compte</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/ui/register/register.component.html</context>
+          <context context-type="linenumber">20</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="0372fcec85051c84b3f61a3b17d86935a04ff5cd" datatype="html">
+        <source>
+settings works!
+        </source>
+        <target>Les paramètres fonctionnent</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/user/settings/settings.component.html</context>
+          <context context-type="linenumber">1</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="0b408bb159298391e4736eadd91eacc0ad75c1d5" datatype="html">
+        <source>Member Since: <x id="INTERPOLATION" equiv-text="{{menberSince | date}}"/></source>
+        <target>Membre depuis: <x id="INTERPOLATION" equiv-text="{{menberSince | date}}"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/user/profile/profile.component.html</context>
+          <context context-type="linenumber">10</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5fe747cf5a4209b9b7fcdd2d1876c82a24a81430" datatype="html">
+        <source>Favorite Color: <x id="INTERPOLATION" equiv-text="{{ user?.favoriteColor }}"/> </source>
+        <target>Couleur Favoris: <x id="INTERPOLATION" equiv-text="{{user?.favoriteColor}}"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/user/profile/profile.component.html</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="0a9ed1bdb5381ea53f4d7ebd55c509467d537e3d" datatype="html">
+        <source><x id="START_TAG_MAT-ICON" ctype="x-mat-icon" equiv-text="&lt;mat-icon>"/>favorite<x id="CLOSE_TAG_MAT-ICON" ctype="x-mat-icon" equiv-text="&lt;/mat-icon>"/></source>
+        <target><x id="START_TAG_MAT-ICON" ctype="x-mat-icon" equiv-text="&lt;mat-icon>"/>favoris<x id="CLOSE_TAG_MAT-ICON" ctype="x-mat-icon" equiv-text="&lt;/mat-icon>"/></target>
+
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/OnTV/tv-show/tv-show.component.html</context>
+          <context context-type="linenumber">14</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6582ecd13b2aaa4ed0f29147fb203fb8ac039072" datatype="html">
+        <source><x id="START_TAG_MAT-ICON" ctype="x-mat-icon" equiv-text="&lt;mat-icon>"/>star<x id="CLOSE_TAG_MAT-ICON" ctype="x-mat-icon" equiv-text="&lt;/mat-icon>"/></source>
+        <target><x id="START_TAG_MAT-ICON" ctype="x-mat-icon" equiv-text="&lt;mat-icon>"/>étoile<x id="CLOSE_TAG_MAT-ICON" ctype="x-mat-icon" equiv-text="&lt;/mat-icon>"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/OnTV/tv-show/tv-show.component.html</context>
+          <context context-type="linenumber">15</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3e39c2a32daf666fcd5f8ed33946da5188156a8d" datatype="html">
+        <source><x id="START_TAG_MAT-ICON" ctype="x-mat-icon" equiv-text="&lt;mat-icon>"/>bookmark<x id="CLOSE_TAG_MAT-ICON" ctype="x-mat-icon" equiv-text="&lt;/mat-icon>"/></source>
+        <target><x id="START_TAG_MAT-ICON" ctype="x-mat-icon" equiv-text="&lt;mat-icon>"/>signet<x id="CLOSE_TAG_MAT-ICON" ctype="x-mat-icon" equiv-text="&lt;/mat-icon>"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/OnTV/tv-show/tv-show.component.html</context>
+          <context context-type="linenumber">16</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="d2bc623b3dde57a25fb808598542809c51fcf2ba" datatype="html">
+        <source><x id="START_TAG_MAT-ICON" ctype="x-mat-icon" equiv-text="&lt;mat-icon>"/>play_arrow<x id="CLOSE_TAG_MAT-ICON" ctype="x-mat-icon" equiv-text="&lt;/mat-icon>"/> Play Trailer</source>
+        <target><x id="START_TAG_MAT-ICON" ctype="x-mat-icon" equiv-text="&lt;mat-icon>"/>play_arrow<x id="CLOSE_TAG_MAT-ICON" ctype="x-mat-icon" equiv-text="&lt;/mat-icon>"/> Jouer la Bande Annonce</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/OnTV/tv-show/tv-show.component.html</context>
+          <context context-type="linenumber">17</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="73e404fd71e64b84ea46aeabb06d70bd38b360a3" datatype="html">
+        <source>All Movies #NowPlaying</source>
+        <target>Tout les Films</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/InTheater/all-movies/all-movies.component.html</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="a9d805cecaee920384d385b8920379b7c304f22d" datatype="html">
+        <source>Filter by</source>
+        <target>Trier par</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/InTheater/all-movies/all-movies.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="67fdc0a5bc3434f168f85ca2e194cecf109baa96" datatype="html">
+        <source>Avg. User Review</source>
+        <target>Moy. Avis des utilisateurs</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/InTheater/all-movies/all-movies.component.html</context>
+          <context context-type="linenumber">24</context>
+        </context-group>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
