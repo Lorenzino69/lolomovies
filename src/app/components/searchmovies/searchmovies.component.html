@@ -4,8 +4,7 @@
       <div class="ui large breadcrumb">
         <div class="active section">
           <span class="ui orange header">
-            <span *ngIf="language == 'pl'">Popularne filmy</span>
-            <span *ngIf="language != 'pl'">Popular movies</span>
+            <span >Popular movies</span>
           </span>
         </div>
       </div>
@@ -14,18 +13,15 @@
     <div class="right aligned middle aligned sixteen wide mobile eight wide tablet eight wide computer column">
       <div class="ui text compact menu">
         <div class="header item">
-          <span *ngIf="language == 'pl'">Sortuj wg</span>
-          <span *ngIf="language != 'pl'">Sort by</span>
+          <span >Sort by</span>
           </div>
         <a class="item" (click)="sortMovies('title')">
           <i class="font icon"></i>
-          <span *ngIf="language == 'pl'">Tytuł</span>
-          <span *ngIf="language != 'pl'">Title</span>
+          <span >Title</span>
         </a>
         <a class="item" (click)="sortMovies('popularity')">
           <i class="empty star icon"></i>
-          <span *ngIf="language == 'pl'">Popularność</span>
-          <span *ngIf="language != 'pl'">Popularity</span>
+          <span >Popularity</span>
         </a>
       </div>
     </div>
@@ -43,12 +39,10 @@
         </div>
 
         <div class="description">
-          <span *ngIf="language == 'pl'">Popularność</span>
-          <span *ngIf="language != 'pl'">Popularity</span>
+          <span >Popularity</span>
           : {{ movie.popularity  | number : '1.0-1' }}
           <br>
-          <span *ngIf="language == 'pl'">Liczba głosów</span>
-          <span *ngIf="language != 'pl'">Vote count</span>
+          <span >Vote count</span>
           : {{ movie.vote_count }}
         </div>
       </div>

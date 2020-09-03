@@ -17,6 +17,7 @@
       <a mat-list-item *ngIf="isLoggedIn" routerLink="/" routerLinkActive="active"
          (click)="start.close(); auth.signOut()">{{'lolo.movie.Logout' | translate}}</a>
       <a mat-list-item routerLink="/genres" routerLinkActive="active" (click)="start.close()">Genres</a>
+      <a mat-list-item routerLink="/searchFilm" routerLinkActive="active" (click)="start.close()">Search</a>
     </mat-nav-list>
   </mat-sidenav>
 
@@ -28,7 +29,9 @@
              <button *ngIf="VerifyHomePage()" mat-raised-button color="primary" class = "button-title">
               Lolo Movie
             </button>
-    <span class="center-flex"><app-search></app-search></span>
+    <span class="center-flex">
+<!--      <app-search></app-search>-->
+    </span>
 
 
     <span *ngIf="auth.user | async as user" class="janco-ocult">{{ user.displayName }}</span>

@@ -23,7 +23,7 @@ export class SearchComponent implements OnInit {
   search(query: string) {
     if (/\S/.test(query)) {
       console.log('on navigue' + query);
-      this.router.navigate(['/search']).then(r => r);
+      this.router.navigate(['/search', query]).then(r => r);
     }
   }
 

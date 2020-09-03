@@ -55,6 +55,8 @@ import {SearchComponent} from './components/search/search.component';
 import {SearchMoviesComponent} from './components/search/search-movies.component';
 import {SearchmoviesComponent} from './components/searchmovies/searchmovies.component';
 import {DetailsComponent} from './components/details/details.component';
+import {SearchService} from './components/search/search.service';
+import {SearchmoviesService} from './components/searchmovies/searchmovies.service';
 
 const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
   direction: 'horizontal',
@@ -136,6 +138,8 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     MoviesService,
     OnTVService,
     AuthGuard,
+    SearchService,
+    SearchmoviesService,
     SeoService,
     {provide: SWIPER_CONFIG, useValue: DEFAULT_SWIPER_CONFIG},
     { provide: FirestoreSettingsToken, useValue: {} }

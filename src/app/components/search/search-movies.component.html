@@ -10,7 +10,6 @@
         <div class="active section">
             <i class="search icon"></i>
             {{ total_results }}
-            <span >wyników wyszukiwania dla </span>
             <span >search results for </span>
             <span class="ui orange header"> {{ query }}</span>
         </div>
@@ -20,17 +19,14 @@
     <div class="right aligned middle aligned sixteen wide mobile eight wide tablet eight wide computer column">
       <div class="ui text compact menu">
         <div class="header item">
-          <span >Sortuj wg</span>
           <span >Sort by</span>
         </div>
         <a class="item" (click)="sortMovies('title')">
           <i class="font icon"></i>
-          <span >Tytuł</span>
           <span >Title</span>
         </a>
         <a class="item" (click)="sortMovies('popularity')">
           <i class="empty star icon"></i>
-          <span >Popularność</span>
           <span >Popularity</span>
         </a>
       </div>
@@ -49,11 +45,9 @@
         </div>
 
         <div class="description">
-          <span >Popularność</span>
           <span >Popularity</span>
           : {{ movie.popularity  | number : '1.0-1' }}
           <br>
-          <span >Liczba głosów</span>
           <span >Vote count</span>
           : {{ movie.vote_count }}
         </div>
@@ -78,7 +72,6 @@
     <div class="computer only tablet only column">
       <button [disabled]="page == 1" class="ui fluid orange labeled icon button" (click)="goPage(-1)">
         <i class="left chevron icon"></i>
-        <span >Poprzednie</span>
         <span >Previous</span>
       </button>
     </div>
@@ -101,7 +94,6 @@
     <!-- prev -->
     <div class="computer only tablet only column">
       <button [disabled]="page == total_pages" class="ui fluid orange right labeled icon button" (click)="goPage(1)">
-        <span >Następne</span>
         <span >Next</span>
         <i class="right chevron icon"></i>
       </button>
