@@ -59,4 +59,8 @@ export class AppComponent implements OnInit {
     this.isGreenColor = true;
   }
 
+  VerifyHomePage(): boolean {
+    return this.router.url === ('/');
+  }
+
 }
