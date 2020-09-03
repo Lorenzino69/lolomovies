@@ -4,7 +4,7 @@
 >
   <mat-sidenav #start>
     <mat-toolbar color="primary">
-      <span style="color: white" i18n>Welcome</span>
+      <span style="color: white">{{'lolo.movie.Welcome' | translate}}</span>
       <span style="flex: 1 1 auto;"></span>
       <button mat-icon-button (click)="start.close()" aria-label="Close">
         <mat-icon>arrow_forward</mat-icon>
@@ -12,10 +12,10 @@
     </mat-toolbar>
     <mat-nav-list>
       <a mat-list-item routerLink="/" routerLinkActive="active" (click)="start.close()">{{'lolo.movie.Home' | translate}}</a>
-      <a mat-list-item *ngIf="isLoggedIn" routerLink="/profile" routerLinkActive="active" (click)="start.close()" i18n>Profile</a>
-      <a mat-list-item *ngIf="!isLoggedIn" routerLink="/login" routerLinkActive="active" (click)="start.close()" i18n>Login</a>
+      <a mat-list-item *ngIf="isLoggedIn" routerLink="/profile" routerLinkActive="active" (click)="start.close()">{{'lolo.movie.Profile' | translate}}</a>
+      <a mat-list-item *ngIf="!isLoggedIn" routerLink="/login" routerLinkActive="active" (click)="start.close()">{{'lolo.movie.Login' | translate}}</a>
       <a mat-list-item *ngIf="isLoggedIn" routerLink="/" routerLinkActive="active"
-         (click)="start.close(); auth.signOut()" i18n>Logout</a>
+         (click)="start.close(); auth.signOut()">{{'lolo.movie.Logout' | translate}}</a>
       <a mat-list-item routerLink="/genres" routerLinkActive="active" (click)="start.close()">Genres</a>
     </mat-nav-list>
   </mat-sidenav>
@@ -34,7 +34,7 @@
     <span *ngIf="auth.user | async as user" class="janco-ocult">{{ user.displayName }}</span>
     <span *ngIf="auth.user | async as user" class="img-header" mat-icon-button [matMenuTriggerFor]="menu"
           matTooltip="Options" [ngStyle]="{'background-image': 'url('+user?.photoURL+')'}"></span>
-    <button mat-icon-button [matMenuTriggerFor]="menu" matTooltip="Changer de couleur" style="padding-right: 50px"
+    <button mat-icon-button [matMenuTriggerFor]="menu" matTooltip="{{'lolo.movie.Color_Change' | translate}}" style="padding-right: 50px"
             aria-label="Change Color">
       <mat-icon>format_color_fill</mat-icon>
     </button>
@@ -42,19 +42,34 @@
     <mat-menu #menu="matMenu">
       <button mat-menu-item (click)="changeToRed()" [class.hidden]="isRedColor" aria-label="Color Red">
         <mat-icon style="color: #F44336">lens</mat-icon>
-        <span i18n>Red</span>
+        <span>{{'lolo.movie.Red' | translate}}</span>
       </button>
       <button mat-menu-item (click)="changeToBlue()" [class.hidden]="isBlueColor" aria-label="Color Blue">
         <mat-icon style="color: #2196f3">lens</mat-icon>
-        <span i18n>Blue</span>
+        <span>{{'lolo.movie.Blue' | translate}}</span>
       </button>
       <button mat-menu-item (click)="changeToGreen()" [class.hidden]="isGreenColor" aria-label="Color Green">
         <mat-icon style="color: #4caf50">lens</mat-icon>
-        <span i18n>Green</span>
+        <span>{{'lolo.movie.Green' | translate}}</span>
       </button>
       <button mat-menu-item (click)="auth.signOut()" *ngIf="isLoggedIn" aria-label="Sign Out">
         <mat-icon>power_settings_new</mat-icon>
-        <span i18n>Sign Out</span>
+        <span>{{'lolo.movie.Sign_Out' | translate}}</span>
+      </button>
+    </mat-menu>
+    <button mat-icon-button [matMenuTriggerFor]="menu" matTooltip="{{'lolo.movie.Language_Change' | translate}}" style="padding-right: 50px"
+            aria-label="Change Color">
+      <mat-icon>flag</mat-icon>
+    </button>
+
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item (click)="changeLanguage('fr')"  aria-label="Flag Green">
+        <mat-icon style="color: #4caf50">lens</mat-icon>
+        <span>FR</span>
+      </button>
+      <button mat-menu-item (click)="changeLanguage('en')">
+        <mat-icon>lens</mat-icon>
+        <span>EN</span>
       </button>
     </mat-menu>
   </mat-toolbar>
@@ -64,7 +79,7 @@
   <footer class="docs-footer">
     <div class="docs-footer-list">
       <div class="docs-footer-copyright">
-        <p>Créer par Lorenzo B.</p>
+        <p>{{'lolo.movie.CreatedBy' | translate}}</p>
       </div>
     </div>
   </footer>

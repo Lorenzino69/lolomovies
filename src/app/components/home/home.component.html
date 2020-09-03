@@ -6,14 +6,14 @@
 
   <section>
     <header class="moviesHome-header">
-      <div class="moviesHome-title" i18n>In Theater</div>
-      <a routerLink="/all-movies" style="color: white" i18n>See all Movies</a>
+      <div class="moviesHome-title">{{'lolo.movie.In_Theater' | translate}}</div>
+      <a routerLink="/all-movies" style="color: white">{{'lolo.movie.See_all_Movies' | translate}}</a>
     </header>
 
     <mat-tab-group (selectedTabChange)="changeTab()">
 
       <!--Now Playing Movies-->
-      <mat-tab label="Films du moment">
+      <mat-tab label="{{'lolo.movie.Film_Moment' | translate}}">
         <div class="swiper-container" [swiper]="config">
           <div class="swiper-wrapper">
             <div *ngFor="let movie of nowPlaying | slice:0:10" class="swiper-slide">
@@ -25,7 +25,7 @@
       </mat-tab>
 
       <!--Upcoming Movies Tab-->
-      <mat-tab label="Nouveau Films">
+      <mat-tab label="{{'lolo.movie.New_Film' | translate}}">
         <div class="swiper-container" [swiper]="config">
           <div class="swiper-wrapper">
             <div *ngFor="let movie of upcomingList | slice:0:10" class="swiper-slide">
@@ -37,7 +37,7 @@
       </mat-tab>
 
       <!--Popular Movies Tab-->
-      <mat-tab label="Films Populaires">
+      <mat-tab label="{{'lolo.movie.Popular_Films' | translate}}">
         <div class="swiper-container" [swiper]="config">
           <div class="swiper-wrapper">
             <div *ngFor="let movie of popularList | slice:0:10" class="swiper-slide">
@@ -55,8 +55,8 @@
 
   <section>
     <header class="moviesHome-header">
-      <div class="moviesHome-title" i18n>On TV</div>
-      <a routerLink="/all-tv-shows" style="color: white" i18n>See all TV Shows</a>
+      <div class="moviesHome-title">{{'lolo.movie.On_TV' | translate}}</div>
+      <a routerLink="/all-tv-shows" style="color: white">{{'lolo.movie.See_all_TV_Shows' | translate}}</a>
     </header>
 
     <mat-tab-group (selectedTabChange)="changeTab()">

@@ -66,4 +66,8 @@ export class AppComponent implements OnInit {
     return this.router.url === ('/');
   }
 
+  changeLanguage(language: string) {
+    this.translate.use(language);
+  }
+
 }
