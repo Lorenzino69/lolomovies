@@ -25,20 +25,17 @@
       <mat-icon>menu</mat-icon>
     </button>
     <span class="center-flex"></span>
-    <span>
-<!--      <a routerLink="/" [class.home-name-padding]="isLoggedIn">Lolo Movie</a>-->
-          <mat-card class="example-card" appMaterialElevation [defaultElevation]="0" raisedElevation="16">
-   <mat-card-header>
-        <mat-card-title class="police">Lolo Movie</mat-card-title>
-   </mat-card-header>
-      </mat-card>
-    </span>
+             <button *ngIf="this.router.url === ('/')" mat-raised-button color="primary" class = "button-title">
+              Lolo Movie
+            </button>
 
     <span class="center-flex"></span>
 
     <span *ngIf="auth.user | async as user" class="janco-ocult">{{ user.displayName }}</span>
-    <span *ngIf="auth.user | async as user" class="img-header" mat-icon-button [matMenuTriggerFor]="menu" matTooltip="Options" [ngStyle]="{'background-image': 'url('+user?.photoURL+')'}"></span>
-    <button mat-icon-button [matMenuTriggerFor]="menu" matTooltip="Changer de couleur" style="padding-right: 10px" *ngIf="!isLoggedIn" aria-label="Change Color">
+    <span *ngIf="auth.user | async as user" class="img-header" mat-icon-button [matMenuTriggerFor]="menu"
+          matTooltip="Options" [ngStyle]="{'background-image': 'url('+user?.photoURL+')'}"></span>
+    <button mat-icon-button [matMenuTriggerFor]="menu" matTooltip="Changer de couleur" style="padding-right: 50px"
+            aria-label="Change Color">
       <mat-icon>format_color_fill</mat-icon>
     </button>
 

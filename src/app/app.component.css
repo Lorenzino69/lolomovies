@@ -8,7 +8,7 @@
   height: 40px;
   width: 40px;
   border-radius: 50%;
-  /*flex-shrink: 0;*/
+  flex-shrink: 0;
   background-size: cover;
   margin-left: 0px;
 }
@@ -30,9 +30,12 @@ mat-nav-list a{
 
 }
 
-.example-card{
-  margin-top: 300px;
-  background-color: #F44336;
+.button-title{
+  margin-top: 50px;
+  width: 400px;
+  height: 100px;
+  border-radius:25px;
+  font: italic small-caps bold 16px/2 cursive;
 }
 
 .home-name-padding {
@@ -47,13 +50,24 @@ mat-nav-list a{
 @media (max-width: 767px) {
   .janco-ocult{  display: none;  }
   .home-name-padding {padding-left: 0;}
+  .button-title{
+    margin-top: 200px;
+    width: 400px;
+    height: 100px;
+    border-radius:25px;
+    font: italic small-caps bold 16px/2 cursive;
+  }
 }
 
 /* Portrait phones and smaller */
 @media (max-width: 480px) {
   .janco-ocult{  display: none;  }
   .home-name-padding {padding-left: 0;}
-}
-.police{
-  font: italic small-caps bold 16px/2 cursive;
+  .button-title{
+    margin-top: 200px;
+    width: 400px;
+    height: 100px;
+    border-radius:25px;
+    font: italic small-caps bold 16px/2 cursive;
+  }
 }

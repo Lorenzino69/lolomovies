@@ -13,7 +13,7 @@
     <mat-tab-group (selectedTabChange)="changeTab()">
 
       <!--Now Playing Movies-->
-      <mat-tab label="Now Playing Movies">
+      <mat-tab label="Films du moment">
         <div class="swiper-container" [swiper]="config">
           <div class="swiper-wrapper">
             <div *ngFor="let movie of nowPlaying | slice:0:10" class="swiper-slide">
@@ -25,7 +25,7 @@
       </mat-tab>
 
       <!--Upcoming Movies Tab-->
-      <mat-tab label="Upcomming Movies">
+      <mat-tab label="Nouveau Films">
         <div class="swiper-container" [swiper]="config">
           <div class="swiper-wrapper">
             <div *ngFor="let movie of upcomingList | slice:0:10" class="swiper-slide">
@@ -37,7 +37,7 @@
       </mat-tab>
 
       <!--Popular Movies Tab-->
-      <mat-tab label="Popular Movies">
+      <mat-tab label="Films Populaires">
         <div class="swiper-container" [swiper]="config">
           <div class="swiper-wrapper">
             <div *ngFor="let movie of popularList | slice:0:10" class="swiper-slide">

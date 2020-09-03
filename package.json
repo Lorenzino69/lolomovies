@@ -5,13 +5,13 @@
   "scripts": {
     "ng": "ng",
     "build": "ng build",
+    "start": "ng serve",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
     "int:extract": "ng xi18n --output-path src/locale",
     "start:fr": "ng serve --configuration=fr",
-    "extract-i18n": "ng xi18n angular-movies --i18n-format xlf --output-path src/locale --i18n-locale en && ng run angular-movies:xliffmerge",
-    "start-fr": "ng serve"
+    "extract-i18n": "ng xi18n angular-movies --i18n-format xlf --output-path src/locale --i18n-locale en && ng run angular-movies:xliffmerge"
   },
   "private": true,
   "dependencies": {
