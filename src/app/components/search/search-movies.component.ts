@@ -91,6 +91,6 @@ export class SearchMoviesComponent implements OnInit {
   }
 
   onSelect(movie: MovieModel) {
-    this.router.navigate(['./searchmovie', movie.id]);
+    this.router.navigate(['./movie', movie.id]);
   }
 }

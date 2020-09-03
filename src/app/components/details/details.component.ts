@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { SearchmoviesService } from '../searchmovies/searchmovies.service';
 import {Location} from '@angular/common';
+import {MovieModel} from '../../models/movie.model';
 
 @Component({
   selector: 'app-details',
@@ -10,7 +11,7 @@ import {Location} from '@angular/common';
   styleUrls: ['./details.component.css']
 })
 export class DetailsComponent implements OnInit {
-  selectedMovie: Object;
+  selectedMovie: MovieModel;
   errorMessage: string;
   language: string;
 
@@ -32,6 +33,7 @@ export class DetailsComponent implements OnInit {
   getDetails(id: number) {
     this.moviesService.getDetails(id)
       .subscribe(
+        // @ts-ignore
         response => this.selectedMovie = response,
         error => this.errorMessage = <any>error);
   }
