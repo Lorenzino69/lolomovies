@@ -1,0 +1,27 @@
+<div class="ui floating message" id="search" style="margin-top: 200px;">
+  <div class="ui container">
+    <div class="ui big fluid action input">
+      <input #inputSearch
+             type="text"
+             [placeholder]="holder"
+             (keyup.enter)="search(inputSearch.value)"
+             (blur)="search(inputSearch.value); inputSearch.value=''">
+
+      <div class="ui grid">
+        <div class="computer only tablet only row">
+          <button mat-raised-button routerLink="/search" routerLinkActive="active" class="ui big right labeled icon" type="submit" color="primary">
+            <i class="search icon">
+            </i>
+            <span>Search</span>
+          </button>
+        </div>
+        <div class="mobile only row">
+          <button mat-raised-button color="primary" class="ui big" type="submit" routerLink="/search" routerLinkActive="active" >
+            <i class="search icon">
+            </i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

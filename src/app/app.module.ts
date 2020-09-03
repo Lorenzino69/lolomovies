@@ -51,12 +51,19 @@ import {MaterialElevationDirective} from './material-elevation.directive.';
 import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import {CommonModule} from '@angular/common';
+import {SearchComponent} from './components/search/search.component';
+import {SearchMoviesComponent} from './components/search/search-movies.component';
+import {SearchmoviesComponent} from './components/searchmovies/searchmovies.component';
+import {DetailsComponent} from './components/details/details.component';
+import {SearchService} from './components/search/search.service';
+import {SearchmoviesService} from './components/searchmovies/searchmovies.service';
 
 const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
   direction: 'horizontal',
   slidesPerView: 'auto',
   keyboard: true
 };
+
 
 @NgModule({
   declarations: [
@@ -79,7 +86,11 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     TvShowComponent,
     AllMoviesComponent,
     AllTvShowsComponent,
-    MaterialElevationDirective
+    MaterialElevationDirective,
+    SearchComponent,
+    SearchMoviesComponent,
+    SearchmoviesComponent,
+    DetailsComponent
   ],
   imports: [
     BrowserModule,
@@ -127,6 +138,8 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     MoviesService,
     OnTVService,
     AuthGuard,
+    SearchService,
+    SearchmoviesService,
     SeoService,
     {provide: SWIPER_CONFIG, useValue: DEFAULT_SWIPER_CONFIG},
     { provide: FirestoreSettingsToken, useValue: {} }

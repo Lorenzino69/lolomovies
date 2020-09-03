@@ -22,6 +22,7 @@ export class AppComponent implements OnInit {
   title: string;
   genre: GenresListComponent;
   movies: Array<PaginatorModel> = [];
+  holder: string;
 
   private isBrowser: boolean = isPlatformBrowser(this.platformId);
 
@@ -45,6 +46,7 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.holder = 'what are you looking for?';
     this.router.events.subscribe((evt) => {
       if (!(evt instanceof NavigationEnd)) {
         return;
@@ -80,5 +82,12 @@ export class AppComponent implements OnInit {
   changeLanguage(language: string) {
 
     this.translate.use(language);
+  }
+
+  search(query: string) {
+    if (/\S/.test(query)) {
+      console.log('on navigue' + query);
+      this.router.navigate(['/search', query]).then(r => r);
+    }
   }
 }

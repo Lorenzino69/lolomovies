@@ -1,8 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import { MoviesService } from '../../../services/inTheater/movies.service';
 import {GenresListModel} from '../../../models/genres-list';
-import {TranslateService} from '@ngx-translate/core';
-import {NavigationEnd, Router} from '@angular/router';
 
 @Component({
   selector: 'app-genres-list',
