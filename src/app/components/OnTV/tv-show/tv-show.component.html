@@ -11,7 +11,7 @@
         <div class="parallax-right-content"> <!--Title-->
           <h2>{{tvShow.name}}</h2>
           <div class="parallax-btn-container">
-            <button mat-mini-fab matTooltip="Bientôt" aria-label="Ajouter Un film favori" i18n><mat-icon>favorite</mat-icon></button>
+            <button mat-mini-fab matTooltip="Bientôt" aria-label="Ajouter Un film favori"><mat-icon>{{'lolo.movie' | translate}}</mat-icon></button>
             <button mat-mini-fab matTooltip="Bientôt" aria-label="Ajouter un film star" i18n><mat-icon>star</mat-icon></button>
             <button mat-mini-fab matTooltip="Bientôt" aria-label="Ajouter un signet" i18n><mat-icon>bookmark</mat-icon></button>
             <a href="javascript:void(0)" (click)="openDialog()" *ngIf="video" i18n><mat-icon>play_arrow</mat-icon> Play Trailer</a>

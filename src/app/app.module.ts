@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import {HttpClient, HttpClientModule} from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { appRoutes } from './app.routes';
 import { AngularFireModule } from '@angular/fire';
@@ -47,6 +47,9 @@ import { SwiperConfigInterface } from 'ngx-swiper-wrapper';
 import {GenresTvComponent} from './components/OnTV/genres-tv/genres-tv.component';
 import {FirestoreSettingsToken} from '@angular/fire/firestore';
 import {MaterialElevationDirective} from './material-elevation.directive.';
+import {TranslateCompiler, TranslateLoader, TranslateModule} from '@ngx-translate/core';
+import {TranslateHttpLoader} from '@ngx-translate/http-loader';
+import {CommonModule} from '@angular/common';
 
 const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
   direction: 'horizontal',
@@ -105,7 +108,19 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     MatSliderModule,
     MatExpansionModule,
     SwiperModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient],
+      },
+      defaultLanguage: 'fr'
+    })
+  ],
+  exports: [
+    CommonModule,
+    TranslateModule
   ],
   providers: [
     MoviesService,
@@ -121,3 +136,7 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+export function HttpLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader(http);
+}

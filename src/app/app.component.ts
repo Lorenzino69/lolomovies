@@ -2,6 +2,7 @@ import {Component, Inject, OnInit, PLATFORM_ID} from '@angular/core';
 import {AuthService} from './core/auth.service';
 import {isPlatformBrowser} from '@angular/common';
 import {NavigationEnd, Router} from '@angular/router';
+import {TranslateService} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-home',
@@ -19,9 +20,11 @@ export class AppComponent implements OnInit {
   constructor(
     private router: Router,
     public auth: AuthService,
-    @Inject(PLATFORM_ID) private platformId: any
+    @Inject(PLATFORM_ID) private platformId: any,
+    private translate: TranslateService
   ) {
-
+    translate.setDefaultLang('fr');
+    translate.use('fr');
     this.auth.afAuth.authState.subscribe(
       a => {
         this.isLoggedIn = a !== null;
