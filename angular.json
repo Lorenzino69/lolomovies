@@ -24,7 +24,8 @@
             "styles": [
               "src/styles.css",
               "src/theme.scss",
-              "node_modules/flag-icon-css/css/flag-icon.min.css"
+              "node_modules/flag-icon-css/css/flag-icon.min.css",
+              "node_modules/semantic-ui-css/semantic.css"
             ],
             "scripts": []
           },
