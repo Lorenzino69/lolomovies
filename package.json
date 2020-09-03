@@ -5,6 +5,8 @@
   "scripts": {
     "ng": "ng",
     "build": "ng build",
+    "build-i18n": "ng build --output-path=dist/fr --aot --prod  --i18n-file=src/i18n/messages.fr.xlf --i18n-format=xlf --i18n-locale fr",
+    "build-i18n:fr": "ng build --output-path=dist/fr --aot --prod  --i18n-file=src/i18n/messages.fr.xlf --i18n-format=xlf ",
     "start": "ng serve --configuration=fr",
     "test": "ng test",
     "lint": "ng lint",

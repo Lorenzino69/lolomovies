@@ -35,7 +35,7 @@ mat-nav-list a{
   width: 400px;
   height: 100px;
   border-radius:25px;
-  font: italic small-caps bold 16px/2 cursive;
+  font: italic small-caps bold 16px/2 Roboto, "Helvetica Neue", sans-serif;
 }
 
 .home-name-padding {
@@ -55,7 +55,7 @@ mat-nav-list a{
     width: 400px;
     height: 100px;
     border-radius:25px;
-    font: italic small-caps bold 16px/2 cursive;
+    font: italic small-caps bold 16px/2 Roboto, "Helvetica Neue", sans-serif;
   }
 }
 
@@ -68,6 +68,6 @@ mat-nav-list a{
     width: 400px;
     height: 100px;
     border-radius:25px;
-    font: italic small-caps bold 16px/2 cursive;
+    font: italic small-caps bold 16px/2 Roboto, "Helvetica Neue", sans-serif;
   }
 }
