@@ -1,8 +1,12 @@
 import {Component, Inject, OnInit, PLATFORM_ID} from '@angular/core';
 import {AuthService} from './core/auth.service';
 import {isPlatformBrowser} from '@angular/common';
-import {NavigationEnd, Router} from '@angular/router';
+import {ActivatedRoute, NavigationEnd, Router} from '@angular/router';
 import {TranslateService} from '@ngx-translate/core';
+import {MoviesService} from './services/inTheater/movies.service';
+import {GenresListModel} from './models/genres-list';
+import {PaginatorModel} from './models/paginator.model';
+import {GenresListComponent} from './components/InTheater/genres-list/genres-list.component';
 
 @Component({
   selector: 'app-home',
@@ -14,6 +18,10 @@ export class AppComponent implements OnInit {
   isRedColor = true;
   isBlueColor = false;
   isGreenColor = false;
+  genres: GenresListModel;
+  title: string;
+  genre: GenresListComponent;
+  movies: Array<PaginatorModel> = [];
 
   private isBrowser: boolean = isPlatformBrowser(this.platformId);
 
@@ -21,10 +29,13 @@ export class AppComponent implements OnInit {
     private router: Router,
     public auth: AuthService,
     @Inject(PLATFORM_ID) private platformId: any,
-    private translate: TranslateService
+    public translate: TranslateService,
+    private _moviesServices: MoviesService
   ) {
-    translate.setDefaultLang('fr');
-    translate.use('fr');
+
+    translate.setDefaultLang('fr-FR');
+    translate.use('fr-FR');
+
     this.auth.afAuth.authState.subscribe(
       a => {
         this.isLoggedIn = a !== null;
@@ -67,7 +78,7 @@ export class AppComponent implements OnInit {
   }
 
   changeLanguage(language: string) {
+
     this.translate.use(language);
   }
-
 }

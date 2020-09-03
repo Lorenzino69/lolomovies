@@ -47,7 +47,8 @@ import { SwiperConfigInterface } from 'ngx-swiper-wrapper';
 import {GenresTvComponent} from './components/OnTV/genres-tv/genres-tv.component';
 import {FirestoreSettingsToken} from '@angular/fire/firestore';
 import {MaterialElevationDirective} from './material-elevation.directive.';
-import {TranslateCompiler, TranslateLoader, TranslateModule} from '@ngx-translate/core';
+// @ts-ignore
+import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import {CommonModule} from '@angular/common';
 

@@ -66,11 +66,11 @@
     </button>
 
     <mat-menu #language="matMenu">
-      <button mat-menu-item (click)="changeLanguage('fr')"  aria-label="Flag Green">
+      <button *ngIf ="!(translate.currentLang === 'fr-FR')"mat-menu-item (click)="changeLanguage('fr-FR')" >
         <mat-icon style="color: #4caf50">lens</mat-icon>
         <span>FR</span>
       </button>
-      <button mat-menu-item (click)="changeLanguage('en')">
+      <button *ngIf ="!(translate.currentLang === 'en-US')" mat-menu-item (click)="changeLanguage('en-US')">
         <mat-icon>lens</mat-icon>
         <span>EN</span>
       </button>
