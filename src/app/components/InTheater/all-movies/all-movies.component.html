@@ -5,8 +5,8 @@
   <mat-card class="filter-movies-card">
     <div style="margin-bottom: 24px">{{'lolo.movie.Filter_by' | translate}}</div>
     <button mat-raised-button color="primary" aria-label="Set Now Playing filter">{{'lolo.movie.NowPlaying' | translate}}</button>
-    <button mat-raised-button color="primary" aria-label="Set Upcoming filter" disabled>{{'lolo.movie.Upcoming' | translate}}</button>
-    <button mat-raised-button color="primary" aria-label="Set Popular filter" disabled>{{'lolo.movie.popular' | translate}}</button>
+    <button mat-raised-button color="primary" aria-label="Set Upcoming filter">{{'lolo.movie.Upcoming' | translate}}</button>
+    <button mat-raised-button color="primary" aria-label="Set Popular filter">{{'lolo.movie.popular' | translate}}</button>
     <mat-expansion-panel>
       <mat-expansion-panel-header>
         <mat-panel-title>
@@ -15,7 +15,7 @@
       </mat-expansion-panel-header>
 
       <div *ngFor="let genre of genres">
-        <button mat-raised-button color="primary" aria-label="Set Genres filter" disabled>
+        <button mat-raised-button color="primary" aria-label="Set Genres filter">
           {{genre.name | translate}}
         </button>
       </div>
@@ -29,7 +29,6 @@
       [thumbLabel]="thumbLabel"
       [tickInterval]="tickInterval"
       [value]="value"
-      disabled
     ></mat-slider>
   </mat-card>
 
