@@ -7,9 +7,9 @@
   <ng-template #authenticated>
     <div *ngIf="auth.user | async as user">
       <h3>{{ user.displayName }}</h3>
-      <p i18n>Member Since: {{menberSince | date}}</p>
+      <p> {{'lolo.movie.Member_Since' | translate}}: {{menberSince | date}}</p>
       <img [src]="user.photoURL" width="50px">
-      <p i18n *ngIf="user.favoriteColor">Favorite Color: {{ user?.favoriteColor }} </p>
+      <p *ngIf="user.favoriteColor"> {{'lolo.movie.Favorite' | translate}}: {{ user?.favoriteColor }} </p>
     </div>
   </ng-template>
 </div>

@@ -2,25 +2,25 @@
   <div *ngIf="!(auth.user | async); else alreadyLoggedIn">
     <div class="Card-Aligner">
       <mat-card class="card-items">
-        <h1 i18n>Login to Your Account</h1>
+        <h1>{{'lolo.movie.Login_to_Your_Account' | translate}}</h1>
         <form [formGroup]="userForm" (ngSubmit)="login()">
 
           <mat-form-field class="input-full">
-            <input matInput #email type="email" placeholder="Adresse email" formControlName="email" required>
+            <input matInput #email type="email" placeholder="{{'lolo.movie.EmailAdress' | translate}}" formControlName="email" required>
             <mat-error *ngIf="formErrors.email">{{ formErrors.email }}</mat-error>
           </mat-form-field>
           <mat-form-field class="input-full">
-            <input matInput #password type="password" placeholder="Mot de passe" formControlName="password" required>
+            <input matInput #password type="password" placeholder="{{'lolo.movie.Password' | translate}}" formControlName="password" required>
             <mat-error *ngIf="formErrors.password">{{ formErrors.password }}</mat-error>
           </mat-form-field>
 
-          <button type="submit" mat-raised-button color="accent" [disabled]="!userForm.valid" i18n>Sign In</button>
+          <button type="submit" mat-raised-button color="accent" [disabled]="!userForm.valid">{{'lolo.movie.Sign_In' | translate}}</button>
 
         </form>
         <br>
-        <button mat-raised-button color="primary" (click)="loginWithGoogle()" i18n>Sign With Google</button>
+        <button mat-raised-button color="primary" (click)="loginWithGoogle()">{{'lolo.movie.Sign_With_Google' | translate}}</button>
         <mat-card-actions>
-          Pas de compte? - <a routerLink="/register" i18n>Register Here Now</a>
+          {{'lolo.movie.NotAccount' | translate}} - <a routerLink="/register">{{'lolo.movie.Register_Here_Now' | translate}}</a>
         </mat-card-actions>
       </mat-card>
     </div>
@@ -30,8 +30,8 @@
   </div>
 
   <ng-template #alreadyLoggedIn>
-    <p class="text-success" i18n>
-      Already logged in!
+    <p class="text-success">
+      {{'lolo.movie.Already_logged_in' | translate}}
     </p>
   </ng-template>
 

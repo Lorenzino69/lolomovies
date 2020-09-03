@@ -28,13 +28,6 @@
             "scripts": []
           },
           "configurations": {
-            "fr": {
-              "aot": true,
-              "outputPath": "dist/angular-movies-fr",
-              "i18nFile": "src/i18n/messages.fr.xlf",
-              "i18nFormat": "xlf",
-              "i18nLocale": "fr"
-            },
             "production": {
               "optimization": true,
               "outputHashing": "all",
@@ -64,16 +57,7 @@
           "configurations": {
             "production": {
               "browserTarget": "angular-movies:build:production"
-            },
-            "fr": {
-              "browserTarget": "angular-movies:build:fr"
             }
-          }
-        },
-        "extract-i18n": {
-          "builder": "@angular-devkit/build-angular:extract-i18n",
-          "options": {
-            "browserTarget": "angular-movies:build"
           }
         },
         "test": {
@@ -103,21 +87,6 @@
               "src/tsconfig.spec.json"
             ],
             "exclude": []
-          }
-        },
-        "xliffmerge": {
-          "builder": "@ngx-i18nsupport/tooling:xliffmerge",
-          "options": {
-            "xliffmergeOptions": {
-              "i18nFormat": "xlf",
-              "srcDir": "src/i18n",
-              "genDir": "src/i18n",
-              "defaultLanguage": "en",
-              "languages": [
-                "en",
-                "fr"
-              ]
-            }
           }
         }
       }

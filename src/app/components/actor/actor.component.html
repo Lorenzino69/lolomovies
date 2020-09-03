@@ -3,15 +3,15 @@
     <mat-card class="actor-card">
       <img src="https://image.tmdb.org/t/p/w300/{{person.profile_path}}" *ngIf="person.profile_path">
       <mat-card-content>
-        <h2 i18n>Personal Info</h2>
+        <h2>{{'lolo.movie.Personal_Info' | translate}}</h2>
         <p>
           <strong>Gender: </strong>
-          <span *ngIf="person.gender == 2" i18n>Male</span>
-          <span *ngIf="person.gender == 1" i18n>Female</span>
+          <span *ngIf="person.gender == 2">{{'lolo.movie.Male' | translate}}</span>
+          <span *ngIf="person.gender == 1">{{'lolo.movie.Female' | translate}}</span>
         </p>
-        <p i18n><strong>Birthday: </strong>
+        <p><strong>{{'lolo.movie.Birthday' | translate}} :</strong>
           {{person.birthday}}</p>
-        <p i18n><strong>Place of Birth: </strong>{{person.place_of_birth}}</p>
+        <p><strong>{{'lolo.movie.Place_of_Birth' | translate}} :</strong>{{person.place_of_birth}}</p>
       </mat-card-content>
     </mat-card>
   </div>
@@ -29,7 +29,7 @@
         </span>
         </div>
         <div>
-          <h3 style="text-align: left" i18n>Biography</h3>
+          <h3 style="text-align: left">{{'lolo.movie.Biography' | translate}}</h3>
           <div class="biography">
             <p style="text-align: justify;">{{person.biography}}</p>
           </div>
@@ -40,17 +40,17 @@
     <mat-card class="actor-card-bio" style="width: 100%; margin-bottom: 0;">
       <mat-card-content>
         <mat-tab-group>
-          <mat-tab [label]="'Movies'" i18n>
-            Soon
+          <mat-tab [label]="'Movies'">
+            {{'lolo.movie.Soon' | translate}}
           </mat-tab>
-          <mat-tab [label]="'Images'" i18n>
-            Soon
+          <mat-tab [label]="'Images'">
+            {{'lolo.movie.Soon' | translate}}
             <!--<mat-card>-->
               <!--<img mat-card-image src="http://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">-->
             <!--</mat-card>-->
           </mat-tab>
-          <mat-tab [label]="'Extra Info'" i18n>
-            Soon
+          <mat-tab [label]="'Extra Info'">
+            {{'lolo.movie.Soon' | translate}}
           </mat-tab>
         </mat-tab-group>
       </mat-card-content>

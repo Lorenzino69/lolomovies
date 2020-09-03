@@ -1,7 +1,7 @@
 <div class="padding-top-60">
   <div class="Card-Aligner">
     <mat-card class="card-items">
-      <h1 i18n>Register</h1>
+      <h1> {{'lolo.movie.Register' | translate}}</h1>
       <form [formGroup]="userForm" (ngSubmit)="signup()">
         <!--<mat-form-field class="input-full">-->
         <!--<input matInput #name id="name" placeholder="Name" required>-->
@@ -17,7 +17,7 @@
         <button type="submit" mat-raised-button  color="primary" [disabled]="!userForm.valid">Submit</button>
       </form>
       <mat-card-actions>
-        <a routerLink="/login" i18n>I Already Have an Account</a>
+        <a routerLink="/login"> {{'lolo.movie.I_Already_Have_an_Account' | translate}}</a>
       </mat-card-actions>
     </mat-card>
   </div>

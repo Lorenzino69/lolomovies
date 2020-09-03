@@ -7,10 +7,10 @@
 
         <div class="parallax-right-content"> <!--Title-->
           <h2>{{movie.title}}</h2>
-          <p i18n>Overview</p>
+          <p>{{'lolo.movie.Overview' | translate}}</p>
           <p style="padding-right: 8px">{{movie.overview}}</p>
           <div>
-            <button mat-raised-button color="primary" aria-label="Trailer" (click)="openDialog()" i18n><mat-icon class="icon-colored" style="background: white; border-radius: 50%;">play_arrow</mat-icon> Watch Trailer</button>
+            <button mat-raised-button color="primary" aria-label="Trailer" (click)="openDialog()"><mat-icon class="icon-colored" style="background: white; border-radius: 50%;">play_arrow</mat-icon>{{'lolo.movie.Watch_Trailer' | translate}}</button>
           </div>
           <p>Categories</p>
           <div>
@@ -26,7 +26,7 @@
       </section>
 
       <section class="top-billed-cast">
-        <p class="title-billed" i18n>Top Billed Cast</p>
+        <p class="title-billed">{{'lolo.movie.Top_Billed_Cast' | translate}}</p>
         <div style="display: flex">
           <div *ngFor="let actor of cast; let last = last" [ngStyle]="{'border-right': last !== true ? '1px solid #ffffff75' : ''}" style="width: 20%;">
 
@@ -51,7 +51,7 @@
   <div class="container">
 
     <div *ngIf="similarMovies" class="similar-movies">
-      <h1 i18n>Recommended Movies</h1>
+      <h1>{{'lolo.movie.Recommended_Movies' | translate}}</h1>
       <div style="text-align:center;">
         <span *ngFor="let movie of similarMovies;">
           <app-poster-card [model]="movie" class="recommended-poster" (click)="upOnRouting()"></app-poster-card>
@@ -65,6 +65,6 @@
 </div>
 <div *ngIf="isLoading" style="margin-top: 30%">
   <div class="loading">
-    <h4 i18n>Loading</h4>
+    <h4>{{'lolo.movie.Loading' | translate}}</h4>
   </div>
 </div>
