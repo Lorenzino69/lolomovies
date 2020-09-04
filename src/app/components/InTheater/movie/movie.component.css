@@ -122,7 +122,7 @@ a button {margin: 2px 2px;}
 
 /* Portrait tablets and small desktops */
 @media (min-width: 768px) and (max-width: 992px) {
-  .parrallax-content{ height: 530px }
+  .parrallax-content{ height: auto }
   .genders-cat button{  margin-bottom: 5px;  }
   .cast-actor-card{  width: 23%;  }
   .video-movie-main{  width: 70%;  }
@@ -131,8 +131,8 @@ a button {margin: 2px 2px;}
 
 /* Landscape phones and portrait tablets */
 @media (max-width: 768px) {
-  .parrallax-content{ height: 520px }
-  .parallax-subtitle, p{ display: none}
+  .parrallax-content{ height: auto }
+  /*.parallax-subtitle, p{ display: none}*/
   .cast-actor-card{  width: 25%;  }
   .genders-cat button{  margin-bottom: 5px;  }
   .video-movie-main{  width: 80%;  }
@@ -145,8 +145,13 @@ a button {margin: 2px 2px;}
   .cast-actor-card{  width: 39%;  }
   .genders-cat button{  margin-bottom: 5px;  }
   .video-movie-main{  width: 90%;  }
-  .parallax-img-container img {width: 150px; height: 250px}
-  .parallax-subtitle, p{ display: none}
-  .similar-movies { display: none}
+  .parallax-img-container img {display: none}
+  /*.parallax-subtitle, p{ display: none}*/
+  /*.similar-movies { display: none}*/
   .recommended-poster::ng-deep .movie-card{  width: 88%; margin: 10px 5px 20px 5px; }
 }
+
+@media (max-width: 1080px) {
+  .parallax-img-container img {display: none}
+}
+

@@ -3,3 +3,6 @@
   background: linear-gradient(rgba(52,41,49,0.8), rgba(26, 33, 74, 0.8)), url('../../../assets/img/background-main.jpg') no-repeat;
   background-size: cover;
 }
+@media {
+  i.search.icon{height:35px;}
+}

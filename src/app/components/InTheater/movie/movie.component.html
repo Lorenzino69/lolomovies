@@ -6,18 +6,24 @@
       <section class="parallax-position">
 
         <div class="parallax-right-content"> <!--Title-->
+          <mat-card style="background-color: transparent; box-shadow: none !important;">
           <h2>{{movie.title}}</h2>
           <p>{{'lolo.movie.Overview' | translate}}</p>
           <p style="padding-right: 8px">{{movie.overview}}</p>
+          </mat-card>
           <div>
-            <button mat-raised-button color="primary" aria-label="Trailer" (click)="openDialog()"><mat-icon class="icon-colored" style="background: white; border-radius: 50%;">play_arrow</mat-icon>{{'lolo.movie.Watch_Trailer' | translate}}</button>
+            <button mat-raised-button color="primary" aria-label="Trailer" (click)="openDialog()">
+              <mat-icon  class="icon-colored" style="background: white; border-radius: 50%;">play_arrow</mat-icon> {{'lolo.movie.Watch_Trailer' | translate}}
+            </button>
           </div>
+          <br>
           <p>Categories</p>
           <div>
             <a *ngFor="let genre of movie.genres" routerLink="/genres/{{genre.id}}/{{genre.name}}">
               <button mat-raised-button color="primary" aria-label="Genres">{{genre.name}}</button>
             </a>
           </div>
+
         </div>
 
         <div class="parallax-img-container">
@@ -32,9 +38,8 @@
 
             <a routerLink="/actor/{{actor?.id}}">
               <div style="display: inline-flex; align-items: center; padding: 0 5px;">
-                <img mat-card-image src="https://image.tmdb.org/t/p/w500/{{actor?.profile_path}}">
-
                 <div>
+                  <img mat-card-image src="https://image.tmdb.org/t/p/w500/{{actor?.profile_path}}">
                   <small style="color: #F44336; font-weight: 500">{{actor.character}}</small>
                   <p style="margin: 0; font-size: 14px;">{{actor.name}}</p>
                 </div>
@@ -49,7 +54,6 @@
   </div>
 
   <div class="container">
-
     <div *ngIf="similarMovies" class="similar-movies">
       <h1>{{'lolo.movie.Recommended_Movies' | translate}}</h1>
       <div style="text-align:center;">
@@ -58,7 +62,6 @@
         </span>
       </div>
     </div> <!--End Similar Movies-->
-
   </div>
 
 

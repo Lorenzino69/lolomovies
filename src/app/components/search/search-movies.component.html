@@ -1,37 +1,23 @@
 <div class="ui container">
-  <div class="ui grid">
-    <div class="middle aligned sixteen wide mobile eight wide tablet eight wide computer column">
-      <div class="ui large breadcrumb">
-        <a class="section" routerLink="/home" routerLinkActive="active">
-          <span >Home</span>
-        </a>
-        <i class="right angle icon divider"></i>
-        <div class="active section">
-            <i class="search icon"></i>
-            {{ total_results }}
-            <span >search results for </span>
-            <span class="ui orange header"> {{ query }}</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="right aligned middle aligned sixteen wide mobile eight wide tablet eight wide computer column">
-      <div class="ui text compact menu">
-        <div class="header item">
-          <span >Sort by</span>
-        </div>
-        <a class="item" (click)="sortMovies('title')">
-          <i class="font icon"></i>
-          <span >Title</span>
-        </a>
-        <a class="item" (click)="sortMovies('popularity')">
-          <i class="empty star icon"></i>
-          <span >Popularity</span>
-        </a>
-      </div>
-    </div>
-  </div>
-
+  <mat-toolbar class="toolbar" color="primary">
+    <mat-icon>search</mat-icon>
+    {{ total_results }}
+    <span >&nbsp;search results for:&nbsp;</span>
+    <span><strong>{{ query }}</strong></span>
+    <span class="example-spacer"></span>
+    <button mat-raised-button color="accent" class="titlemobile"  (click)="sortMovies('title')">
+      <span >Title
+      </span>
+      <mat-icon>arrow_upward</mat-icon>
+    </button>
+    &nbsp;&nbsp;&nbsp;
+    <button mat-raised-button color="accent"  (click)="sortMovies('popularity')">
+      <span >Popularity
+      </span>
+      <mat-icon>arrow_upward</mat-icon>
+    </button>
+  </mat-toolbar>
+<br>
   <div class="ui link five doubling cards">
     <div class="card" *ngFor="let movie of movies" [routerLink]="['/movie/'+movie.id]" routerLinkActive="active">
       <div class="image">

@@ -27,7 +27,6 @@ export class SearchMoviesComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    console.log('on est bien arrivé');
     this.route.params.subscribe(
       params => {
         this.query = params['query'];
@@ -37,7 +36,6 @@ export class SearchMoviesComponent implements OnInit {
   }
 
   searchMovies(query: string, page: number) {
-    console.log('on est bien arrivé 2');
     this.searchService.searchMovies(query, page)
       .subscribe(
         response => {
@@ -88,6 +86,9 @@ export class SearchMoviesComponent implements OnInit {
     if (newPage <= this.total_pages && newPage >= 1) {
       this.searchMovies(this.query, newPage);
     }
+    setTimeout(function () {
+      window.scrollTo(0, 0);
+    }, 2);
   }
 
   onSelect(movie: MovieModel) {

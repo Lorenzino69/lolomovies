@@ -50,24 +50,13 @@ mat-nav-list a{
 @media (max-width: 767px) {
   .janco-ocult{  display: none;  }
   .home-name-padding {padding-left: 0;}
-  .button-title{
-    margin-top: 200px;
-    width: 400px;
-    height: 100px;
-    border-radius:25px;
-    font: italic small-caps bold 16px/2 Roboto, "Helvetica Neue", sans-serif;
-  }
+  /*.button-title{display:none;}*/
 }
 
 /* Portrait phones and smaller */
 @media (max-width: 480px) {
   .janco-ocult{  display: none;  }
   .home-name-padding {padding-left: 0;}
-  .button-title{
-    margin-top: 200px;
-    width: 400px;
-    height: 100px;
-    border-radius:25px;
-    font: italic small-caps bold 16px/2 Roboto, "Helvetica Neue", sans-serif;
-  }
+  .button-title{margin-top:700px;}
+
 }
