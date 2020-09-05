@@ -13,7 +13,7 @@ export class ActorCardComponent implements OnInit {
 
   ngOnInit(){
 
-    document.querySelector('mat-card').scrollTop = 1500;
+    document.querySelector('app-movie-card').scrollTop = 1500;
   }
 
 }

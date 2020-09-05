@@ -44,21 +44,22 @@
       <mat-card-content>
         <mat-tab-group>
           <mat-tab [label]="'Movies'">
-              <div class="swiper-container" [swiper]="config">
-                <div class="swiper-wrapper">
-                  <div *ngFor="let movieactor of movies | slice:0:10" class="swiper-slide">
-                    <app-movie-card [model]="movieactor" style="width: 100%"></app-movie-card>
-                  </div>
+            <div class="swiper-container" [swiper]="config">
+              <div class="swiper-wrapper">
+                <div *ngFor="let movieactor of movies | slice:0:10" class="swiper-slide">
+                  <app-movie-card [model]="movieactor" style="width: 100%"></app-movie-card>
                 </div>
-                <div class="swiper-pagination" style="position : relative; padding-top: 20px;"></div>
               </div>
-<!--        </span>-->
+              <div class="swiper-pagination" style="position : relative; padding-top: 20px;"></div>
+            </div>
           </mat-tab>
-          <mat-tab [label]="'Images'">
-            <div style="text-align:center;">
-        <span *ngFor="let image of images;">
-          <img class ="actorimages" src="https://image.tmdb.org/t/p/w300/{{image.file_path}}" *ngIf="image.file_path">
-        </span>
+<!--          TODO-->
+          <mat-tab [label]="'Images'" class="mat-tab-body-content">
+            <div>
+              <div *ngFor="let image of images;" class="swiper-slide">
+                      <img *ngIf="image.file_path" mat-card-image src="https://image.tmdb.org/t/p/w300/{{image.file_path}}">
+                       <img *ngIf="!image.file_path" mat-card-image src="https://placehold.it/500x740" >
+              </div>
             </div>
           </mat-tab>
           <mat-tab [label]="'Extra Info'">

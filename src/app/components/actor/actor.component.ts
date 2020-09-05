@@ -52,6 +52,8 @@ export class ActorComponent implements OnInit, AfterViewInit {
         this.images = res.profiles;
       }, error => console.log(error));
     });
+     }
+  ngAfterViewInit() {
     setTimeout(() => {
       this.config = {
         direction: 'horizontal',
@@ -84,41 +86,6 @@ export class ActorComponent implements OnInit, AfterViewInit {
       };
     }, 200)
 
-
-  }
-  ngAfterViewInit() {
-
-    // setTimeout(() => {
-    //   this.config = {
-    //     direction: 'horizontal',
-    //     slidesPerView: 4,
-    //     navigation: true,
-    //     pagination: {
-    //       el: '.swiper-pagination',
-    //       clickable: true,
-    //       hideOnClick: true
-    //     },
-    //     breakpoints: {
-    //       1199: {
-    //         slidesPerView: 4,
-    //         spaceBetween: 20,
-    //       },
-    //       991: {
-    //         slidesPerView: 2,
-    //         spaceBetween: 20,
-    //       },
-    //       767: {
-    //         slidesPerView: 2,
-    //         spaceBetween: 20,
-    //       },
-    //       480: {
-    //         slidesPerView: 1,
-    //         spaceBetween: 0,
-    //       }
-    //     },
-    //     spaceBetween: 20
-    //   };
-    // }, 250)
   }
 
   changeTab() {

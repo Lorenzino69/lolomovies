@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
+import {TranslateService} from '@ngx-translate/core';
 
 @Injectable()
 export class OnTVService {
@@ -10,11 +11,14 @@ export class OnTVService {
   language: string;
   region: string;
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private translate: TranslateService) {
     this.baseUrl = 'https://api.themoviedb.org/3/';
     this.apiKey = '9ebeb1f5074a5a0edbddc22b59b8f97a';
     this.language = 'en-US';
     this.region = 'US'
+    this.translate.onLangChange.subscribe((lang) => {
+      this.language = this.translate.currentLang;
+    });
   }
 
   getTvOnTheAir(page: number): Observable<any> {
@@ -51,6 +55,10 @@ export class OnTVService {
 
   getTVShowsCredits(id: string): Observable<any> {
     return this.http.get(`${this.baseUrl}tv/${id}/credits?api_key=${this.apiKey}&language=${this.language}`)
+  }
+
+  getTVShowsSeason(id: string, season: string): Observable<any> {
+    return this.http.get(`${this.baseUrl}tv/${id}/season/${season}?api_key=${this.apiKey}&language=${this.language}`)
   }
 
 }

@@ -51,7 +51,7 @@
   "lolo.movie.Release_Date": "Date de sortie",
   "lolo.movie.Released_today": "Diffusé aujourd'hui",
   "lolo.movie.Search": "Rechercher",
-  "lolo.movie.See_all_Movies": "voir tout les films",
+  "lolo.movie.See_all_Movies": "Voir tout les films",
   "lolo.movie.See_all_TV_Shows": "Voir toutes les séries TV",
   "lolo.movie.Sign_In": "S''inscrire",
   "lolo.movie.Sign_Out": "Se désinscrire",
@@ -68,5 +68,6 @@
   "lolo.movie.holder": "Quel film recherchez vous?",
   "lolo.movie.popular": "Populaire",
   "lolo.movie.settings_works": "Paramètres fonctionne",
+  "lolo.movie.Seasons": "Saisons",
   "lolo.movie.star": "Etoile"
 }

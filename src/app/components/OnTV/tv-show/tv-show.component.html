@@ -10,7 +10,12 @@
         </div>
         <div class="parallax-right-content"> <!--Title-->
           <h2>{{tvShow.name}}</h2>
-
+          <mat-form-field appearance="fill">
+            <mat-label>{{'lolo.movie.Seasons' | translate}}</mat-label>
+            <mat-select (selectionChange)="navigateTo($event.value,tvShow.id)">
+              <mat-option value="{{ season }}" *ngFor="let season of seasons">{{'lolo.movie.Seasons' | translate}}: {{ season }}</mat-option>
+            </mat-select>
+          </mat-form-field>
           <h3 class="parallax-subtitle">{{'lolo.movie.Overview' | translate}}</h3>
           <p>{{tvShow.overview}}</p>
           <div>
@@ -28,7 +33,7 @@
       <section class="top-billed-cast">
         <p class="title-billed">{{'lolo.movie.Top_Billed_Cast' | translate}}</p>
         <div style="display: flex">
-          <div *ngFor="let actor of cast; let last = last" [ngStyle]="{'border-right': last !== true ? '1px solid #ffffff75' : ''}" style="width: 20%;">
+          <div *ngFor="let actor of cast; let last = last" [ngStyle]="{'border-right': last !== true ? '1px solid #ffffff75' : ''}" style="width: 25%;">
 
             <a routerLink="/actor/{{actor?.id}}">
               <div style="display: inline-flex; align-items: center; padding: 0 5px;">
@@ -47,6 +52,7 @@
 
 
   <div class="container">
+    <div class="spacerecommended">
     <div *ngIf="similarMovies" class="similar-movies">
       <h1>{{'lolo.movie.Recommended_TVShows' | translate}}</h1>
       <div style="text-align:center;">
@@ -56,5 +62,6 @@
       </div>
     </div> <!--End Similar Movies-->
   </div>
+</div>
 </div>
 

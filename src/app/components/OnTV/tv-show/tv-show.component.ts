@@ -1,12 +1,13 @@
 import {Component, ElementRef, Inject, OnInit, ViewChild} from '@angular/core';
 import {TvShowModel} from '../../../models/onTV/tvShow.model';
 import {OnTVService} from '../../../services/onTV/onTV.service';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {DomSanitizer} from '@angular/platform-browser';
 import {MovieVideo} from '../../../models/movie-video';
 import {MAT_DIALOG_DATA, MatDialog, MatDialogRef} from '@angular/material/dialog';
 import {PaginatorModel} from '../../../models/paginator.model';
 import {MovieCast} from '../../../models/movie-cast';
+import {TvShowSeasonModel} from '../../../models/onTV/TVShowSeason.model';
 
 @Component({
   selector: 'app-tv-show',
@@ -16,31 +17,38 @@ import {MovieCast} from '../../../models/movie-cast';
 export class TvShowComponent implements OnInit {
 
   tvShow: TvShowModel;
+  tvShowSeason: TvShowSeasonModel
   isLoading = true;
   video: MovieVideo;
   similarMovies: Array<PaginatorModel> = [];
   cast: MovieCast;
+  seasons = [];
+  tvShowSeasons: TvShowModel;
 
   @ViewChild('closeModal', { static: false }) public  closeModal: ElementRef;
   @ViewChild('openModal', { static: false }) public  openModal: ElementRef;
+  private i: number;
 
 
   constructor(
     private onTvService: OnTVService,
-    private router: ActivatedRoute,
+    private route: ActivatedRoute,
     private sanitizer: DomSanitizer,
     public dialog: MatDialog,
+    private router: Router
   ) { }
 
   ngOnInit() {
-    this.router.params.subscribe( (params) => {
+    this.route.params.subscribe( (params) => {
       const id = params['id'];
       this.getMovieVideo(id);
       this.getRecomendedTVShows(id);
       this.getTVShowsCredits(id);
+      this.getTVShowsSeason(id,1)
       this.onTvService.getTVShow(id).subscribe( tvShow => {
         this.tvShow = tvShow;
-
+        this.tvShowSeasons = tvShow.number_of_seasons;
+        this.CalculSeasonSize(this.tvShowSeasons);
         if (!this.tvShow) {
           alert('Server Error')
         } else {
@@ -49,6 +57,19 @@ export class TvShowComponent implements OnInit {
       });
 
     });
+  }
+
+  CalculSeasonSize(SeasonSize){
+
+    for(this.i = 1 ; this.i <=SeasonSize; this.i++){
+      this.seasons.push(this.i)
+    }
+}
+
+  navigateTo(value,id){
+    console.log(value);
+    this.router.navigate(['/tv-show/seasons',id,value],{ relativeTo: this.route });
+
   }
 
   getMovieVideo(id) {
@@ -88,6 +109,17 @@ export class TvShowComponent implements OnInit {
         this.cast = res.cast.slice(0, 5);
       }, () => {},
       () => { if (tvCreditsSubs) { tvCreditsSubs.unsubscribe() } }
+    );
+  }
+
+  getTVShowsSeason(id,season) {
+    const tvSeasonsSubs = this.onTvService.getTVShowsSeason(id,season).subscribe(
+      res => {
+         res.episodes = res.episodes.filter( item => { return item });
+        this.tvShowSeason = res.episodes
+
+      }, () => {},
+      () => { if (tvSeasonsSubs) { tvSeasonsSubs.unsubscribe() } }
     );
   }
 

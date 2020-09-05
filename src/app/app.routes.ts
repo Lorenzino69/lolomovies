@@ -17,6 +17,7 @@ import {GenresTvComponent} from './components/OnTV/genres-tv/genres-tv.component
 import {SearchMoviesComponent} from './components/search/search-movies.component';
 import {SearchmoviesComponent} from './components/searchmovies/searchmovies.component';
 import {SearchComponent} from './components/search/search.component';
+import {SeasonsComponent} from './components/OnTV/seasons/seasons.component';
 
 export const appRoutes: Routes = [
   { path: '', component: HomeComponent},
@@ -34,6 +35,7 @@ export const appRoutes: Routes = [
   { path: 'settings', component: SettingsComponent },
   { path: 'searchFilm', component: SearchComponent},
   { path: 'search/:query', component: SearchMoviesComponent},
+  { path: 'tv-show/seasons/:id/:seasons', component: SeasonsComponent },
   { path: 'home', component: SearchmoviesComponent },
   { path: '**', component: PageNotFoundComponent}
 ];

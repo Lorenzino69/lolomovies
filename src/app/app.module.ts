@@ -58,6 +58,10 @@ import {SearchService} from './components/search/search.service';
 import {SearchmoviesService} from './components/searchmovies/searchmovies.service';
 import {ActorService} from './services/actor/actor.service';
 import {ActorCardComponent} from './components/ui/movie-card-view/movie-card.component';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatOptionModule} from '@angular/material/core';
+import {MatSelectModule} from '@angular/material/select';
+import {SeasonsComponent} from './components/OnTV/seasons/seasons.component';
 
 const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
   direction: 'horizontal',
@@ -92,7 +96,8 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     SearchMoviesComponent,
     SearchmoviesComponent,
     AppTVDialogComponent,
-    ActorCardComponent
+    ActorCardComponent,
+    SeasonsComponent
   ],
   imports: [
     BrowserModule,
@@ -116,6 +121,7 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     MatListModule,
     MatCardModule,
     MatTooltipModule,
+    MatFormFieldModule,
     MatPaginatorModule,
     MatMenuModule,
     MatDialogModule,
@@ -130,7 +136,9 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
         deps: [HttpClient],
       },
       defaultLanguage: 'fr'
-    })
+    }),
+    MatOptionModule,
+    MatSelectModule
   ],
   exports: [
     CommonModule,

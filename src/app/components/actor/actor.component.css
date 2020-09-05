@@ -20,7 +20,12 @@
 }
 
 .actorimages{
-  width: 80%
+  width: 100%
+}
+
+.mat-tab-body-content {
+  height: 100%;
+  overflow: hidden !important;
 }
 
 .actor-card-bio h3 {
