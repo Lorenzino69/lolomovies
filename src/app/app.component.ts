@@ -86,7 +86,6 @@ export class AppComponent implements OnInit {
 
   search(query: string) {
     if (/\S/.test(query)) {
-      console.log('on navigue' + query);
       this.router.navigate(['/search', query]).then(r => r);
     }
   }

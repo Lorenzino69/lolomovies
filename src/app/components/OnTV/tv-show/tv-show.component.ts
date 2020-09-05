@@ -52,10 +52,8 @@ export class TvShowComponent implements OnInit {
   }
 
   getMovieVideo(id) {
-    console.log(id)
     const TvVideosSubs = this.onTvService.getTVShowVideo(id).subscribe(
       res => {
-        console.log(res.results)
         if (res.results && res.results.length) {
           this.video = res.results[0];
           this.video['url'] = this.sanitizer.bypassSecurityTrustResourceUrl('https://www.youtube.com/embed/' + this.video['key']);
@@ -66,7 +64,6 @@ export class TvShowComponent implements OnInit {
   }
 
   openDialog(): void {
-    console.log(this.video)
     this.dialog.open(AppTVDialogComponent, {
       height: '500px',
       width: '800px',
@@ -77,7 +74,6 @@ export class TvShowComponent implements OnInit {
   getRecomendedTVShows(id) {
     const recomendedTVSubs = this.onTvService.getRecomendTVShows(id).subscribe(
       res => {
-        console.log(res)
         this.similarMovies = res.results.slice(0, 8);
         this.similarMovies.forEach(np => np['isMovie'] = true);
       }, () => {},
@@ -86,7 +82,6 @@ export class TvShowComponent implements OnInit {
   }
 
   getTVShowsCredits(id) {
-    console.log(id)
     const tvCreditsSubs = this.onTvService.getTVShowsCredits(id).subscribe(
       res => {
         res.cast = res.cast.filter( item => { return item.profile_path });
@@ -94,6 +89,10 @@ export class TvShowComponent implements OnInit {
       }, () => {},
       () => { if (tvCreditsSubs) { tvCreditsSubs.unsubscribe() } }
     );
+  }
+
+  upOnRouting(){
+    window.scroll(0,0);
   }
 
 }

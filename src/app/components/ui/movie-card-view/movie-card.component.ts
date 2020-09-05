@@ -1,11 +1,11 @@
 import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
-  selector: 'app-poster-card',
-  templateUrl: './poster-card.component.html',
-  styleUrls: ['./poster-card.component.css']
+  selector: 'app-movie-card',
+  templateUrl: './movie-card.component.html',
+  styleUrls: ['./movie-card.component.css']
 })
-export class MovieCardComponent implements OnInit {
+export class ActorCardComponent implements OnInit {
 
   @Input() public model: any;
 

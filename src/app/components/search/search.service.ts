@@ -20,7 +20,6 @@ export class SearchService {
   searchMovies(query: string, page: number) {
     const searchUrl = `${this.searchUrl}?api_key=${this.apiKey}&language=${this.language}&query=${query}&page=${page}`;
 
-console.log(this.http.get(searchUrl));
     return this.http.get(searchUrl)
       .map((res) => { return res })
   }

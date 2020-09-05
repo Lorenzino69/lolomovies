@@ -56,6 +56,8 @@ import {SearchMoviesComponent} from './components/search/search-movies.component
 import {SearchmoviesComponent} from './components/searchmovies/searchmovies.component';
 import {SearchService} from './components/search/search.service';
 import {SearchmoviesService} from './components/searchmovies/searchmovies.service';
+import {ActorService} from './services/actor/actor.service';
+import {ActorCardComponent} from './components/ui/movie-card-view/movie-card.component';
 
 const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
   direction: 'horizontal',
@@ -89,7 +91,8 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     SearchComponent,
     SearchMoviesComponent,
     SearchmoviesComponent,
-    AppTVDialogComponent
+    AppTVDialogComponent,
+    ActorCardComponent
   ],
   imports: [
     BrowserModule,
@@ -138,6 +141,7 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     OnTVService,
     AuthGuard,
     SearchService,
+    ActorService,
     SearchmoviesService,
     SeoService,
     {provide: SWIPER_CONFIG, useValue: DEFAULT_SWIPER_CONFIG},

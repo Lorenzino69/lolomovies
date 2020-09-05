@@ -62,6 +62,8 @@ export class MovieComponent implements OnInit {
   }
 
 
+
+
   getMovieCredits(id) {
     const movieCreditsSubs = this._moviesService.getMovieCredits(id).subscribe(
       res => {
@@ -111,6 +113,10 @@ export class MovieComponent implements OnInit {
       width: '800px',
       data: { video: this.video}
     });
+  }
+
+  upOnRouting(){
+    document.querySelector('mat-card').scrollTop = 1500;
   }
 
 }

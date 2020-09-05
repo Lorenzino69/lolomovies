@@ -1,5 +1,5 @@
 <div class="padding-top-60 container" style=" display: flex;">
-  <div  style="width: 25%">
+  <div style="width: 25%">
     <mat-card class="actor-card">
       <img src="https://image.tmdb.org/t/p/w300/{{person.profile_path}}" *ngIf="person.profile_path">
       <mat-card-content>
@@ -23,9 +23,12 @@
         <div class="actor-title" dir="auto">
           <h2>{{person.name}}</h2>
           <span class="actor-social-links">
-          <a target="_blank" href="https://www.facebook.com/{{externalIds['facebook_id']}}"><mat-icon class="fa fa-facebook-official" aria-hidden="true"></mat-icon></a>
-          <a target="_blank" href="https://twitter.com/{{externalIds['twitter_id']}}"><mat-icon class="fa fa-twitter-square" aria-hidden="true"></mat-icon></a>
-          <a target="_blank" href="https://www.instagram.com/{{externalIds['instagram_id']}}"><mat-icon class="fa fa-instagram" aria-hidden="true"></mat-icon></a>
+          <a target="_blank" href="https://www.facebook.com/{{externalIds['facebook_id']}}"><mat-icon
+            class="fa fa-facebook-official" aria-hidden="true"></mat-icon></a>
+          <a target="_blank" href="https://twitter.com/{{externalIds['twitter_id']}}"><mat-icon
+            class="fa fa-twitter-square" aria-hidden="true"></mat-icon></a>
+          <a target="_blank" href="https://www.instagram.com/{{externalIds['instagram_id']}}"><mat-icon
+            class="fa fa-instagram" aria-hidden="true"></mat-icon></a>
         </span>
         </div>
         <div>
@@ -41,14 +44,20 @@
       <mat-card-content>
         <mat-tab-group>
           <mat-tab [label]="'Movies'">
-            <span *ngFor="let movie of movies;">
-          <img src="https://image.tmdb.org/t/p/w300/{{movie.backdrop_path}}" *ngIf="movie.backdrop_path">
-        </span>
+              <div class="swiper-container" [swiper]="config">
+                <div class="swiper-wrapper">
+                  <div *ngFor="let movieactor of movies | slice:0:10" class="swiper-slide">
+                    <app-movie-card [model]="movieactor" style="width: 100%"></app-movie-card>
+                  </div>
+                </div>
+                <div class="swiper-pagination" style="position : relative; padding-top: 20px;"></div>
+              </div>
+<!--        </span>-->
           </mat-tab>
           <mat-tab [label]="'Images'">
             <div style="text-align:center;">
         <span *ngFor="let image of images;">
-          <img src="https://image.tmdb.org/t/p/w300/{{image.file_path}}" *ngIf="image.file_path">
+          <img class ="actorimages" src="https://image.tmdb.org/t/p/w300/{{image.file_path}}" *ngIf="image.file_path">
         </span>
             </div>
           </mat-tab>

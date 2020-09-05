@@ -13,7 +13,6 @@ export class ProfileComponent {
   constructor(public auth: AuthService) {
     auth.afAuth.authState.subscribe(
       res => {
-        console.log(res);
         if (res !== null) {
           this.menberSince = res.metadata['creationTime'];
         }
