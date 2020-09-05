@@ -2,42 +2,44 @@
   <mat-toolbar class="toolbar" color="primary">
     <mat-icon>search</mat-icon>
     {{ total_results }}
-    <span >&nbsp;search results for:&nbsp;</span>
+    <span>&nbsp;results:&nbsp;</span>
     <span><strong>{{ query }}</strong></span>
     <span class="example-spacer"></span>
-    <button mat-raised-button color="accent" class="titlemobile"  (click)="sortMovies('title')">
-      <span >Title
+    <button mat-raised-button color="accent" class="titlemobile" (click)="sortMovies('title')">
+      <span>{{'lolo.movie.Title' | translate}}
       </span>
       <mat-icon>arrow_upward</mat-icon>
     </button>
     &nbsp;&nbsp;&nbsp;
-    <button mat-raised-button color="accent"  (click)="sortMovies('popularity')">
-      <span >Popularity
+    <button mat-raised-button color="accent" (click)="sortMovies('popularity')">
+      <span>{{'lolo.movie.Popularity' | translate}}
       </span>
       <mat-icon>arrow_upward</mat-icon>
     </button>
   </mat-toolbar>
-<br>
+  <br>
   <div class="ui link five doubling cards">
     <div class="card" *ngFor="let movie of movies" [routerLink]="['/movie/'+movie.id]" routerLinkActive="active">
-      <div class="image">
-        <img *ngIf="movie.poster_path" class="ui middle aligned tiny image" src="https://image.tmdb.org/t/p/w500{{movie.poster_path}}">
-        <img *ngIf="!movie.poster_path" class="ui middle aligned tiny image" src="https://placehold.it/500x740">
-      </div>
-      <div class="content">
-        <div class="header">
-          {{ movie.title }}
-        </div>
 
-        <div class="description">
-          <span >Popularity</span>
-          : {{ movie.popularity  | number : '1.0-1' }}
-          <br>
-          <span >Vote count</span>
-          : {{ movie.vote_count }}
+        <div class="image">
+          <img *ngIf="movie.poster_path" class="ui middle aligned tiny image"
+               src="https://image.tmdb.org/t/p/w500{{movie.poster_path}}">
+          <img *ngIf="!movie.poster_path" class="ui middle aligned tiny image" src="https://placehold.it/500x740">
         </div>
-      </div>
-      <div class="extra content">
+        <div class="content">
+          <div class="header">
+            {{ movie.title }}
+          </div>
+
+          <div class="description">
+            <span>{{'lolo.movie.Popularity' | translate}}</span>
+            : {{ movie.popularity  | number : '1.0-1' }}
+            <br>
+            <span>{{'lolo.movie.Vote_Count' | translate}}</span>
+            : {{ movie.vote_count }}
+          </div>
+        </div>
+        <div class="extra content">
         <span class="right floated">
           <h3>
             <i class="star icon"></i>
@@ -45,8 +47,8 @@
           </h3>
 
         </span>
-        {{ movie.release_date }}
-      </div>
+          {{ movie.release_date }}
+        </div>
     </div>
   </div>
 
@@ -57,7 +59,7 @@
     <div class="computer only tablet only column">
       <button [disabled]="page == 1" class="ui fluid red labeled icon button" (click)="goPage(-1)">
         <i class="left chevron icon"></i>
-        <span >Previous</span>
+        <span>{{'lolo.movie.Previous' | translate}}</span>
       </button>
     </div>
 
@@ -78,14 +80,14 @@
 
     <!-- prev -->
     <div class="computer only tablet only column">
-      <button mat-raised-button [disabled]="page == total_pages" class="ui fluid red right labeled icon button" (click)="goPage(1)">
-        <span >Next</span>
+      <button [disabled]="page == total_pages" class="ui fluid red right labeled icon button" (click)="goPage(1)">
+        <span>{{'lolo.movie.Next' | translate}}</span>
         <i class="right chevron icon"></i>
       </button>
     </div>
 
     <div class="mobile only column">
-      <button color="primary" [disabled]="page == total_pages" class="ui fluid red" (click)="goPage(1)">
+      <button [disabled]="page == total_pages" class="ui fluid red" (click)="goPage(1)">
         <i class="right chevron icon"></i>
       </button>
     </div>

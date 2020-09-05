@@ -119,7 +119,7 @@ a button {margin: 0 2px;}
 
 /* Portrait tablets and small desktops */
 @media (min-width: 768px) and (max-width: 992px) {
-  .parrallax-content{ height: 530px }
+  .parrallax-content{ height: 720px }
   .genders-cat button{  margin-bottom: 5px;  }
   .cast-actor-card{  width: 23%;  }
   .video-movie-main{  width: 70%;  }
@@ -127,8 +127,8 @@ a button {margin: 0 2px;}
 
 /* Landscape phones and portrait tablets */
 @media (max-width: 768px) {
-  .parrallax-content{ height: 520px }
-  .parallax-subtitle, p{ display: none}
+  .parrallax-content{ height: 720px }
+  /*.parallax-subtitle, p{}*/
   .cast-actor-card{  width: 25%;  }
   .genders-cat button{  margin-bottom: 5px;  }
   .video-movie-main{  width: 80%;  }
@@ -139,6 +139,23 @@ a button {margin: 0 2px;}
   .cast-actor-card{  width: 39%;  }
   .genders-cat button{  margin-bottom: 5px;  }
   .video-movie-main{  width: 90%;  }
-  .parallax-img-container img {width: 150px; height: 250px}
-  .parallax-subtitle, p{ display: none}
+  .parallax-img-container img {display: none}
+  /*.parallax-subtitle, p{ display: none}*/
+}
+
+.top-billed-cast {}
+.top-billed-cast .title-billed {
+  text-align: left; margin-left: 45px;
+}
+.top-billed-cast img {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  margin: 0 8px 0 0;
+  object-fit: cover;
+}
+
+@media (min-width: 1201px) {
+  .recommended-poster::ng-deep .movie-card{  width: 22%; margin: 10px 10px 20px 10px; }
+  .recommended-poster::ng-deep .movie-card .mat-card-title{  font-size: 20px !important  }
 }

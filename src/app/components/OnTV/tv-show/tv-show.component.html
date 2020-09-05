@@ -10,21 +10,51 @@
         </div>
         <div class="parallax-right-content"> <!--Title-->
           <h2>{{tvShow.name}}</h2>
-          <div class="parallax-btn-container">
-            <button mat-mini-fab matTooltip="Bientôt" aria-label="Ajouter Un film favori"><mat-icon>{{'lolo.movie' | translate}}</mat-icon></button>
-            <button mat-mini-fab matTooltip="Bientôt" aria-label="Ajouter un film star"><mat-icon>{{'lolo.movie.star' | translate}}</mat-icon></button>
-            <button mat-mini-fab matTooltip="Bientôt" aria-label="Ajouter un signet"><mat-icon>{{'lolo.movie.bookmark' | translate}}</mat-icon></button>
-            <a href="javascript:void(0)" (click)="openDialog()" *ngIf="video"><mat-icon>play_arrow</mat-icon>{{'lolo.movie.Play_Trailer' | translate}}</a>
-          </div>
+
           <h3 class="parallax-subtitle">{{'lolo.movie.Overview' | translate}}</h3>
           <p>{{tvShow.overview}}</p>
+          <div>
+            <button mat-raised-button color="primary" aria-label="Trailer" (click)="openDialog()">
+              <mat-icon  class="icon-colored" style="background: white; border-radius: 50%;">play_arrow</mat-icon> {{'lolo.movie.Watch_Trailer' | translate}}
+            </button>
+          </div>
+          <br>
           <h3 class="parallax-subtitle">Categories</h3>
           <a *ngFor="let genre of tvShow.genres" routerLink="/genres-tv/{{genre.id}}/{{genre.name}}">
             <button mat-raised-button color="primary">{{genre.name}}</button>
           </a>
         </div>
       </section>
-    </div>
+      <section class="top-billed-cast">
+        <p class="title-billed">{{'lolo.movie.Top_Billed_Cast' | translate}}</p>
+        <div style="display: flex">
+          <div *ngFor="let actor of cast; let last = last" [ngStyle]="{'border-right': last !== true ? '1px solid #ffffff75' : ''}" style="width: 20%;">
 
+            <a routerLink="/actor/{{actor?.id}}">
+              <div style="display: inline-flex; align-items: center; padding: 0 5px;">
+                <div>
+                  <img mat-card-image src="https://image.tmdb.org/t/p/w500/{{actor?.profile_path}}">
+                  <small style="color: #F44336; font-weight: 500">{{actor.character}}</small>
+                  <p style="margin: 0; font-size: 14px;">{{actor.name}}</p>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+
+  <div class="container">
+    <div *ngIf="similarMovies" class="similar-movies">
+      <h1>{{'lolo.movie.Recommended_Movies' | translate}}</h1>
+      <div style="text-align:center;">
+        <span *ngFor="let tvshows of similarMovies;">
+          <app-poster-card [model]="tvshows" class="recommended-poster" (click)="upOnRouting()"></app-poster-card>
+        </span>
+      </div>
+    </div> <!--End Similar Movies-->
   </div>
 </div>
+

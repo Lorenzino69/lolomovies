@@ -33,12 +33,24 @@ export class OnTVService {
     return this.http.get(`${this.baseUrl}tv/${id}?api_key=${this.apiKey}&language=${this.language}`)
   }
 
+  getTVShowVideo(id: string): Observable<any> {
+    return this.http.get(`${this.baseUrl}tv/${id}/videos?api_key=${this.apiKey}&language=${this.language}`)
+  }
+
   getGenres(): Observable<any> {
     return this.http.get(`${this.baseUrl}genre/tv/list?api_key=${this.apiKey}&language=${this.language}`)
   }
 
   getTVShowByGenre(id: string): Observable<any> {
     return this.http.get(`${this.baseUrl}discover/tv?api_key=${this.apiKey}&language=en-US&sort_by=popularity.desc&page=1&timezone=America%2FNew_York&with_genres=${id}&include_null_first_air_dates=false`);
+  }
+
+  getRecomendTVShows(id: string): Observable<any> {
+    return this.http.get(`${this.baseUrl}tv/${id}/recommendations?api_key=${this.apiKey}&language=${this.language}`)
+  }
+
+  getTVShowsCredits(id: string): Observable<any> {
+    return this.http.get(`${this.baseUrl}tv/${id}/credits?api_key=${this.apiKey}&language=${this.language}`)
   }
 
 }

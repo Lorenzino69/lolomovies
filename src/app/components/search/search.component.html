@@ -3,15 +3,14 @@
     <div class="ui big fluid action input">
       <input #inputSearch
              type="text"
-             [placeholder]="holder"
              (keyup.enter)="search(inputSearch.value)"
-             (blur)="search(inputSearch.value); inputSearch.value=''">
+             (blur)="search(inputSearch.value); inputSearch.value=''" placeholder="{{'lolo.movie.holder' | translate}}">
       <div class="ui grid">
         <div class="computer only tablet only row">
           <button mat-raised-button routerLink="/search" routerLinkActive="active" class="ui big right labeled icon"
                   type="submit" color="primary">
               <span><i class="search icon">
-              </i>Search</span>
+              </i>{{'lolo.movie.Search' | translate}}</span>
           </button>
         </div>
         <div class="mobile only row">

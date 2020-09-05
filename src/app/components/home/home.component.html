@@ -62,7 +62,7 @@
     <mat-tab-group (selectedTabChange)="changeTab()">
 
       <!--Currently Airing TV Shows Tab-->
-      <mat-tab label="Currently Airing TV Shows">
+      <mat-tab label="{{'lolo.movie.Currently_Airing_TV_Shows' | translate}}">
         <div class="swiper-container" [swiper]="config">
           <div class="swiper-wrapper">
             <div *ngFor="let tvShow of onTheAir | slice:0:10" class="swiper-slide">
@@ -74,7 +74,7 @@
       </mat-tab>
 
       <!--Airing Today TV Shows Tab-->
-      <mat-tab label="Airing Today TV Shows">
+      <mat-tab label="{{'lolo.movie.Airing_Tody_TV_Shows' | translate}}">
         <div class="swiper-container" [swiper]="config">
           <div class="swiper-wrapper">
             <div *ngFor="let tvShow of airingToday | slice:0:10" class="swiper-slide">
@@ -86,7 +86,7 @@
       </mat-tab>
 
       <!--Popular TV Shows Tab-->
-      <mat-tab label="Popular TV Shows">
+      <mat-tab label="{{'lolo.movie.Popular_TV_Shows' | translate}}">
         <div class="swiper-container" [swiper]="config">
           <div class="swiper-wrapper">
             <div *ngFor="let tvShow of popularTvShows | slice:0:10" class="swiper-slide">

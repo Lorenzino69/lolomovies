@@ -62,6 +62,7 @@ export class MovieComponent implements OnInit {
   }
 
   getMovieCredits(id) {
+    console.log(id)
     const movieCreditsSubs = this._moviesService.getMovieCredits(id).subscribe(
       res => {
         res.cast = res.cast.filter( item => { return item.profile_path });
