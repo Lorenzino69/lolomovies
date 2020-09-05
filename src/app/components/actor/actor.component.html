@@ -41,7 +41,9 @@
       <mat-card-content>
         <mat-tab-group>
           <mat-tab [label]="'Movies'">
-            {{'lolo.movie.Soon' | translate}}
+            <span *ngFor="let movie of movies;">
+          <img src="https://image.tmdb.org/t/p/w300/{{movie.backdrop_path}}" *ngIf="movie.backdrop_path">
+        </span>
           </mat-tab>
           <mat-tab [label]="'Images'">
             <div style="text-align:center;">

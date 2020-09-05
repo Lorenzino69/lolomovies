@@ -16,7 +16,7 @@ import {Profiles} from '../../models/profiles';
 export class ActorComponent implements OnInit {
 
   person: Actors = new Actors();
-  movies: MovieModel = new MovieModel();
+  movies: Array<MovieModel> = [];
   externalIds: Object = {};
   images: Array<Profiles> = [];
 
@@ -33,6 +33,7 @@ export class ActorComponent implements OnInit {
         this.person = person;
       }, error => console.log(error));
       this._moviesSerice.getPersonCast(id).subscribe(res => {
+        res.cast = res.cast.filter( item => { return item.backdrop_path });
         this.movies = res.cast;
       }, error => console.log(error));
 
@@ -43,7 +44,6 @@ export class ActorComponent implements OnInit {
       this._moviesSerice.getActorImages(id).subscribe(res => {
         res.profiles = res.profiles.filter( item => { return item.file_path });
         this.images = res.profiles;
-        console.log(this.images)
       }, error => console.log(error));
     });
   }
