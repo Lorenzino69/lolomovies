@@ -48,7 +48,7 @@
 
   <div class="container">
     <div *ngIf="similarMovies" class="similar-movies">
-      <h1>{{'lolo.movie.Recommended_Movies' | translate}}</h1>
+      <h1>{{'lolo.movie.Recommended_TVShows' | translate}}</h1>
       <div style="text-align:center;">
         <span *ngFor="let tvshows of similarMovies;">
           <app-poster-card [model]="tvshows" class="recommended-poster" (click)="upOnRouting()"></app-poster-card>

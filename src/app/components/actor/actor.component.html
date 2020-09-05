@@ -5,7 +5,7 @@
       <mat-card-content>
         <h2>{{'lolo.movie.Personal_Info' | translate}}</h2>
         <p>
-          <strong>Gender: </strong>
+          <strong>{{'lolo.movie.Gender' | translate}}: </strong>
           <span *ngIf="person.gender == 2">{{'lolo.movie.Male' | translate}}</span>
           <span *ngIf="person.gender == 1">{{'lolo.movie.Female' | translate}}</span>
         </p>
@@ -44,7 +44,11 @@
             {{'lolo.movie.Soon' | translate}}
           </mat-tab>
           <mat-tab [label]="'Images'">
-            {{'lolo.movie.Soon' | translate}}
+            <div style="text-align:center;">
+        <span *ngFor="let image of images;">
+          <img src="https://image.tmdb.org/t/p/w300/{{image.file_path}}" *ngIf="image.file_path">
+        </span>
+            </div>
           </mat-tab>
           <mat-tab [label]="'Extra Info'">
             {{'lolo.movie.Soon' | translate}}

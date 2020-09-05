@@ -81,4 +81,8 @@ export class MoviesService {
     return this.http.get(`${this.baseUrl}person/${id}/movie_credits?api_key=${this.apiKey}&language=${this.language}`)
   }
 
+  getActorImages(id: string): Observable<any> {
+    return this.http.get(`${this.baseUrl}person/${id}/images?api_key=${this.apiKey}&language=${this.language}`)
+  }
+
 }
