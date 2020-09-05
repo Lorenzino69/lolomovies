@@ -11,13 +11,19 @@
         <div class="parallax-right-content"> <!--Title-->
           <h2>{{tvShow.name}}</h2>
           <div class="parallax-btn-container">
-            <button mat-mini-fab matTooltip="Bientôt" aria-label="Ajouter Un film favori"><mat-icon>{{'lolo.movie' | translate}}</mat-icon></button>
-            <button mat-mini-fab matTooltip="Bientôt" aria-label="Ajouter un film star"><mat-icon>{{'lolo.movie.star' | translate}}</mat-icon></button>
-            <button mat-mini-fab matTooltip="Bientôt" aria-label="Ajouter un signet"><mat-icon>{{'lolo.movie.bookmark' | translate}}</mat-icon></button>
-            <a href="javascript:void(0)" (click)="openDialog()" *ngIf="video"><mat-icon>play_arrow</mat-icon>{{'lolo.movie.Play_Trailer' | translate}}</a>
-          </div>
+            <button mat-mini-fab matTooltip="{{'lolo.movie.Soon' | translate}}" aria-label="Ajouter Un film favori"><mat-icon></mat-icon></button>
+            <button mat-mini-fab matTooltip="{{'lolo.movie.Soon' | translate}}" aria-label="Ajouter un film star"><mat-icon></mat-icon></button>
+            <button mat-mini-fab matTooltip="{{'lolo.movie.Soon' | translate}}" aria-label="Ajouter un signet"><mat-icon></mat-icon></button>
+           </div>
+
           <h3 class="parallax-subtitle">{{'lolo.movie.Overview' | translate}}</h3>
           <p>{{tvShow.overview}}</p>
+          <div>
+            <button mat-raised-button color="primary" aria-label="Trailer" (click)="openDialog()">
+              <mat-icon  class="icon-colored" style="background: white; border-radius: 50%;">play_arrow</mat-icon> {{'lolo.movie.Watch_Trailer' | translate}}
+            </button>
+          </div>
+          <br>
           <h3 class="parallax-subtitle">Categories</h3>
           <a *ngFor="let genre of tvShow.genres" routerLink="/genres-tv/{{genre.id}}/{{genre.name}}">
             <button mat-raised-button color="primary">{{genre.name}}</button>

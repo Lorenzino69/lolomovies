@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import {MoviesService} from '../../services/inTheater/movies.service';
+import {TranslateService} from '@ngx-translate/core';
 
 
 @Component({
@@ -11,18 +12,19 @@ import {MoviesService} from '../../services/inTheater/movies.service';
 export class SearchComponent implements OnInit {
   holder: string;
 
+
   constructor(
     private moviesService: MoviesService,
-    private router: Router
-  ) { }
+    private router: Router,
+    private translate: TranslateService
+  ) { this.holder = this.translate.instant('lolo.movie.holder');}
 
   ngOnInit() {
-    this.holder = 'what are you looking for?';
+    this.holder = this.translate.instant('lolo.movie.holder');
   }
 
   search(query: string) {
     if (/\S/.test(query)) {
-      console.log('on navigue' + query);
       this.router.navigate(['/search', query]).then(r => r);
     }
   }

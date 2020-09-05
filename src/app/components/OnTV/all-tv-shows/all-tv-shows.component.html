@@ -1,13 +1,13 @@
 <div class="container padding-top-60" fxLayout='column'>
 
-  <h2 fxFlex="100%" style="text-align: left; padding-left: 20px;">All TV Shows #CurrentlyAiring</h2>
+  <h2 fxFlex="100%" style="text-align: left; padding-left: 20px;">All TV Shows</h2>
 
   <div fxLayout='row'>
     <mat-card fxFlex="25%" class="filter-tv-card">
-      <div style="margin-bottom: 24px">Filter by</div>
-      <button mat-raised-button color="primary" aria-label="Set Airing filter">Actuellement Diffusée</button>
-      <button mat-raised-button color="primary" aria-label="Set Airing Today filter" disabled>Diffusé aujourd'hui</button>
-      <button mat-raised-button color="primary" aria-label="Set Popular filter" disabled>Populaire</button>
+      <div style="margin-bottom: 24px">{{'lolo.movie.Filter_by' | translate}}</div>
+      <button mat-raised-button color="primary" aria-label="Set Airing filter">{{'lolo.movie.Currently_Released' | translate}}</button>
+      <button mat-raised-button color="primary" aria-label="Set Airing Today filter">{{'lolo.movie.Released_today' | translate}}</button>
+      <button mat-raised-button color="primary" aria-label="Set Popular filter">{{'lolo.movie.popular' | translate}}</button>
       <mat-expansion-panel>
         <mat-expansion-panel-header>
           <mat-panel-title>
@@ -16,7 +16,7 @@
         </mat-expansion-panel-header>
 
         <div *ngFor="let genre of genres">
-          <button mat-raised-button color="primary" aria-label="Set Genres filter" disabled>
+          <button mat-raised-button color="primary" aria-label="Set Genres filter">
             {{genre.name}}
           </button>
         </div>

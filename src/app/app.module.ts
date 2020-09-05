@@ -34,7 +34,7 @@ import { ModalComponent } from './components/ui/modal/modal.component';
 import { SettingsComponent } from './components/user/settings/settings.component';
 import { ProfileComponent } from './components/user/profile/profile.component';
 import {OnTVService} from './services/onTV/onTV.service';
-import { TvShowComponent } from './components/OnTV/tv-show/tv-show.component';
+import {AppTVDialogComponent, TvShowComponent} from './components/OnTV/tv-show/tv-show.component';
 import { AllMoviesComponent } from './components/InTheater/all-movies/all-movies.component';
 import { AllTvShowsComponent } from './components/OnTV/all-tv-shows/all-tv-shows.component';
 import {CoreModule} from './core/core.module';
@@ -54,7 +54,6 @@ import {CommonModule} from '@angular/common';
 import {SearchComponent} from './components/search/search.component';
 import {SearchMoviesComponent} from './components/search/search-movies.component';
 import {SearchmoviesComponent} from './components/searchmovies/searchmovies.component';
-import {DetailsComponent} from './components/details/details.component';
 import {SearchService} from './components/search/search.service';
 import {SearchmoviesService} from './components/searchmovies/searchmovies.service';
 
@@ -90,7 +89,7 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     SearchComponent,
     SearchMoviesComponent,
     SearchmoviesComponent,
-    DetailsComponent
+    AppTVDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -145,7 +144,8 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     { provide: FirestoreSettingsToken, useValue: {} }
   ],
   entryComponents: [
-    AppMovieDialogComponent
+    AppMovieDialogComponent,
+    AppTVDialogComponent
   ],
   bootstrap: [AppComponent]
 })
