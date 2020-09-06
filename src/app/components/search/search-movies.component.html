@@ -19,7 +19,8 @@
   </mat-toolbar>
   <br>
   <div class="ui link five doubling cards">
-    <div class="card" *ngFor="let movie of movies" [routerLink]="['/movie/'+movie.id]" routerLinkActive="active">
+<!--    <div class="card" *ngFor="let movie of movies" [routerLink]="['/movie/'+movie.id]" routerLinkActive="active">-->
+    <div class="card" *ngFor="let movie of movies" [routerLink]="[movie.original_title ? ['/movie/'] + movie.id : ['/tv-show/'] + movie.id]" routerLinkActive="active">
 
         <div class="image">
           <img *ngIf="movie.poster_path" class="ui middle aligned tiny image"
@@ -87,7 +88,7 @@
     </div>
 
     <div class="mobile only column">
-      <button [disabled]="page == total_pages" class="ui fluid red" (click)="goPage(1)">
+      <button [disabled]="page == total_pages" class="ui fluid red labeled icon button" (click)="goPage(1)">
         <i class="right chevron icon"></i>
       </button>
     </div>

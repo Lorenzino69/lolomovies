@@ -7,7 +7,9 @@ import {TranslateService} from '@ngx-translate/core';
 
 @Injectable()
 export class SearchService {
-  private searchUrl = 'https://api.themoviedb.org/3/search/movie';
+  private searchMovieUrl = 'https://api.themoviedb.org/3/search/movie';
+  private searchTvShowUrl = 'https://api.themoviedb.org/3/search/tv';
+  private searchMultiUrl = 'https://api.themoviedb.org/3/search/multi';
   private apiKey = '9ebeb1f5074a5a0edbddc22b59b8f97a';
   private language;
 
@@ -18,7 +20,21 @@ export class SearchService {
   }
 
   searchMovies(query: string, page: number) {
-    const searchUrl = `${this.searchUrl}?api_key=${this.apiKey}&language=${this.language}&query=${query}&page=${page}`;
+    const searchUrl = `${this.searchMovieUrl}?api_key=${this.apiKey}&language=${this.language}&query=${query}&page=${page}`;
+
+    return this.http.get(searchUrl)
+      .map((res) => { return res })
+  }
+
+  searchTvShows(query: string, page: number) {
+    const searchUrl = `${this.searchTvShowUrl}?api_key=${this.apiKey}&language=${this.language}&query=${query}&page=${page}`;
+
+    return this.http.get(searchUrl)
+      .map((res) => { return res })
+  }
+
+  searchMulti(query: string, page: number) {
+    const searchUrl = `${this.searchMultiUrl}?api_key=${this.apiKey}&language=${this.language}&query=${query}&page=${page}`;
 
     return this.http.get(searchUrl)
       .map((res) => { return res })

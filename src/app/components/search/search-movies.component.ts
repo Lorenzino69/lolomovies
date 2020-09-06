@@ -31,7 +31,9 @@ export class SearchMoviesComponent implements OnInit {
       params => {
         this.query = params['query'];
         this.page = 1;
-        this.searchMovies(this.query, this.page);
+        // this.searchMovies(this.query, this.page);
+        // this.searchTvShows(this.query, this.page);
+        this.searchMulti(this.query, this.page);
       });
   }
 
@@ -44,6 +46,36 @@ export class SearchMoviesComponent implements OnInit {
           this.total_results = response['total_results'];
           this.total_pages = response['total_pages'];
           this.page = response['page'];
+        },
+        error => console.error(error)
+      );
+  }
+
+  searchTvShows(query: string, page: number) {
+    this.searchService.searchTvShows(query, page)
+      .subscribe(
+        response => {
+          this.searches = response;
+          this.movies = response['results'];
+          this.total_results = response['total_results'];
+          this.total_pages = response['total_pages'];
+          this.page = response['page'];
+        },
+        error => console.error(error)
+      );
+  }
+
+  searchMulti(query: string, page: number) {
+    this.searchService.searchMulti(query, page)
+      .subscribe(
+        response => {
+          this.searches = response;
+          this.movies = response['results'];
+          this.total_results = response['total_results'];
+          this.total_pages = response['total_pages'];
+          this.page = response['page'];
+
+          console.log(this.movies)
         },
         error => console.error(error)
       );
@@ -84,7 +116,7 @@ export class SearchMoviesComponent implements OnInit {
   goPage(go: number) {
     const newPage = this.page + go;
     if (newPage <= this.total_pages && newPage >= 1) {
-      this.searchMovies(this.query, newPage);
+      this.searchMulti(this.query, newPage);
     }
     setTimeout(function () {
       window.scrollTo(0, 0);
