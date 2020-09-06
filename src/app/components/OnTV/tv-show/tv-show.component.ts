@@ -17,7 +17,6 @@ import {TvShowSeasonModel} from '../../../models/onTV/TVShowSeason.model';
 export class TvShowComponent implements OnInit {
 
   tvShow: TvShowModel;
-  tvShowSeason: TvShowSeasonModel
   isLoading = true;
   video: MovieVideo;
   similarMovies: Array<PaginatorModel> = [];
@@ -44,7 +43,6 @@ export class TvShowComponent implements OnInit {
       this.getMovieVideo(id);
       this.getRecomendedTVShows(id);
       this.getTVShowsCredits(id);
-      this.getTVShowsSeason(id,1)
       this.onTvService.getTVShow(id).subscribe( tvShow => {
         this.tvShow = tvShow;
         this.tvShowSeasons = tvShow.number_of_seasons;
@@ -67,8 +65,7 @@ export class TvShowComponent implements OnInit {
 }
 
   navigateTo(value,id){
-    console.log(value);
-    this.router.navigate(['/tv-show/seasons',id,value],{ relativeTo: this.route });
+    this.router.navigate(['/tv-show',id,'seasons',value]);
 
   }
 
@@ -112,16 +109,7 @@ export class TvShowComponent implements OnInit {
     );
   }
 
-  getTVShowsSeason(id,season) {
-    const tvSeasonsSubs = this.onTvService.getTVShowsSeason(id,season).subscribe(
-      res => {
-         res.episodes = res.episodes.filter( item => { return item });
-        this.tvShowSeason = res.episodes
 
-      }, () => {},
-      () => { if (tvSeasonsSubs) { tvSeasonsSubs.unsubscribe() } }
-    );
-  }
 
   upOnRouting(){
     window.scroll(0,0);

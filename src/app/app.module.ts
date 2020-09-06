@@ -62,6 +62,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatOptionModule} from '@angular/material/core';
 import {MatSelectModule} from '@angular/material/select';
 import {SeasonsComponent} from './components/OnTV/seasons/seasons.component';
+import {SeasonCardComponent} from './components/ui/season-card-view/season-card.component';
 
 const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
   direction: 'horizontal',
@@ -97,7 +98,8 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     SearchmoviesComponent,
     AppTVDialogComponent,
     ActorCardComponent,
-    SeasonsComponent
+    SeasonsComponent,
+    SeasonCardComponent
   ],
   imports: [
     BrowserModule,

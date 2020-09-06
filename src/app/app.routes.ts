@@ -35,7 +35,7 @@ export const appRoutes: Routes = [
   { path: 'settings', component: SettingsComponent },
   { path: 'searchFilm', component: SearchComponent},
   { path: 'search/:query', component: SearchMoviesComponent},
-  { path: 'tv-show/seasons/:id/:seasons', component: SeasonsComponent },
+  { path: 'tv-show/:id/seasons/:seasons', component: SeasonsComponent },
   { path: 'home', component: SearchmoviesComponent },
   { path: '**', component: PageNotFoundComponent}
 ];

@@ -12,8 +12,6 @@ export class MovieCardComponent implements OnInit {
   constructor () {}
 
   ngOnInit(){
-
-    document.querySelector('mat-card').scrollTop = 1500;
   }
 
 }
