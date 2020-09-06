@@ -18,6 +18,60 @@ mat-card-title {
 }
 
 mat-card-content {
-  padding: 10px;
+  padding: 20px;
   text-align: left;
+
+}
+@media (min-width: 1200px) {
+  mat-card-content {
+    padding: 20px;
+    text-align: left;
+    margin-bottom:20px !important;
+  }
+}
+
+/* Landscape tablets and medium desktops */
+@media (min-width: 992px) and (max-width: 1200px) {
+  mat-card-content {
+    padding: 20px;
+    text-align: left;
+    margin-bottom:20px !important;
+  }
+}
+
+/* Portrait tablets and small desktops */
+@media (min-width: 768px) and (max-width: 992px) {
+  mat-card-content {
+    padding: 20px;
+    text-align: left;
+    margin-bottom:20px !important;
+  }
+}
+
+
+/* Landscape phones and portrait tablets */
+@media (max-width: 768px) {
+  mat-card-content {
+    padding: 20px;
+    text-align: left;
+    margin-bottom:20px !important;
+  }
+}
+
+/* Portrait phones and smaller */
+@media (max-width: 480px) {
+
+  mat-card-content {
+    padding: 20px;
+    text-align: left;
+    margin-bottom:20px !important;
+  }
+}
+
+@media (max-width: 375px) {
+  mat-card-content {
+    padding: 20px;
+    text-align: left;
+    margin-bottom:20px !important;
+  }
 }

@@ -13,7 +13,7 @@
           <mat-form-field appearance="fill">
             <mat-label>{{'lolo.movie.Seasons' | translate}}</mat-label>
             <mat-select (selectionChange)="navigateTo($event.value,tvShow.id)">
-              <mat-option value="{{ season }}" *ngFor="let season of seasons">{{'lolo.movie.Seasons' | translate}}: {{ season }}</mat-option>
+              <mat-option value="{{ season }}" *ngFor="let season of seasons">{{'lolo.movie.Season' | translate}}: {{ season }}</mat-option>
             </mat-select>
           </mat-form-field>
           <h3 class="parallax-subtitle">{{'lolo.movie.Overview' | translate}}</h3>
