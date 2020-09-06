@@ -24,13 +24,13 @@
     <button mat-icon-button (click)="start.open()" aria-label="Menu">
       <mat-icon>menu</mat-icon>
     </button>
-    <span class="center-flex"><img *ngIf="VerifyHomePage()" class = "button-title" src="https://fontmeme.com/permalink/200904/f510a4dac66a305613b87307b26f2cd0.png" alt="netflix-font" border="0"></span>
-<!--             <button *ngIf="VerifyHomePage()" mat-raised-button color="primary" >-->
-<!--               <img class = "button-title" src="https://fontmeme.com/permalink/200904/92cc01d6e73c9ae3686e52679b911809.png" alt="netflix-font" border="0">-->
-<!--               <img *ngIf="VerifyHomePage()" class = "button-title" src="https://fontmeme.com/permalink/200904/f510a4dac66a305613b87307b26f2cd0.png" alt="netflix-font" border="0">-->
-<!--            </button>-->
+
+      <img *ngIf="VerifyHomePage()" class = "button-title" src="https://fontmeme.com/permalink/200904/f510a4dac66a305613b87307b26f2cd0.png" alt="netflix-font" border="0">
+
     <span class="center-flex">
     </span>
+
+
 
 <!--user connected-->
 <!--    <span *ngIf="auth.user | async as user" class="janco-ocult">{{ user.displayName }}</span>-->
@@ -42,7 +42,7 @@
       <mat-icon>format_color_fill</mat-icon>
     </button>
 
-    <mat-menu #menu="matMenu" style="padding-right:20px;">
+    <mat-menu #menu="matMenu">
       <button mat-menu-item (click)="changeToRed()" [class.hidden]="isRedColor" aria-label="Color Red">
         <mat-icon style="color: #F44336">lens</mat-icon>
         <span>{{'lolo.movie.Red' | translate}}</span>
@@ -61,7 +61,6 @@
       </button>
     </mat-menu>
 
-
     <button mat-icon-button [matMenuTriggerFor]="language" matTooltip="{{'lolo.movie.Language_Change' | translate}}"
             aria-label="Change Language">
       <mat-icon>flag</mat-icon>
@@ -77,6 +76,9 @@
         <span>EN</span>
       </button>
     </mat-menu>
+
+
+
   </mat-toolbar>
 
   <router-outlet></router-outlet>
