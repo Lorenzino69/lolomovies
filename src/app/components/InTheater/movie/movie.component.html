@@ -15,6 +15,16 @@
             <button mat-raised-button color="primary" aria-label="Trailer" (click)="openDialog()">
               <mat-icon  class="icon-colored" style="background: white; border-radius: 50%;">play_arrow</mat-icon> {{'lolo.movie.Watch_Trailer' | translate}}
             </button>
+<div>  <br><button mat-raised-button color="primary" aria-label="Trailer" (click)="gotolinks()">
+  <mat-icon  class="icon-colored" style="background: white; border-radius: 50%;">play_arrow</mat-icon> Voir
+</button></div>
+            <br>
+<!--            <mat-form-field appearance="fill">-->
+<!--              <mat-label>Lien steamings</mat-label>-->
+<!--              <mat-select>-->
+<!--                <mat-option value="{{ season }}" *ngFor="let season of linksStreams">{{'lolo.movie.Season' | translate}}: {{ season }}</mat-option>-->
+<!--              </mat-select>-->
+<!--            </mat-form-field>-->
           </div>
           <br>
           <p>Categories</p>

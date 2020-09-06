@@ -8,6 +8,7 @@ import {MovieVideo} from '../../../models/movie-video';
 import {MAT_DIALOG_DATA, MatDialog, MatDialogRef} from '@angular/material';
 import {PaginatorModel} from '../../../models/paginator.model';
 import {SeoService} from '../../../services/seo.service';
+import {LinksService} from '../../../services/onTV/links.service';
 
 @Component({
   selector: 'app-movie',
@@ -24,13 +25,16 @@ export class MovieComponent implements OnInit {
 
   @ViewChild('closeModal', { static: false }) public  closeModal: ElementRef;
   @ViewChild('openModal', { static: false }) public  openModal: ElementRef;
+  private linksStreams: any;
+  private links: string;
 
   constructor(
     private _moviesService: MoviesService,
     private route: ActivatedRoute,
     private sanitizer: DomSanitizer,
     public dialog: MatDialog,
-    private seo: SeoService
+    private seo: SeoService,
+    private linksService: LinksService
   ) {}
 
   ngOnInit() {
@@ -41,6 +45,7 @@ export class MovieComponent implements OnInit {
         this.getMovieCredits(id);
         this.getMovieVideo(id);
         this.getRecomendedMovie(id);
+        this.getLinkStreamsMovie(id);
       }
     );
   }
@@ -58,6 +63,24 @@ export class MovieComponent implements OnInit {
         }
       }, () => {},
       () => { if (movieSubs) { movieSubs.unsubscribe() } }
+    );
+  }
+
+
+
+  getLinkStreamsMovie(id){
+
+
+    this.links = 'https://streamvideo.link/getvideo?key=bzDT471S9aBSrQa6&video_id=' + id + '&tmdb=1&tv=0';
+
+  }
+
+  gotolinks(){
+
+    // window.location.href = this.linksStreams;
+    window.open(
+      this.links,
+      '_blank' // <- This is what makes it open in a new window.
     );
   }
 

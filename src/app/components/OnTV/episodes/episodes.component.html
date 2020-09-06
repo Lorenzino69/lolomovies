@@ -16,6 +16,13 @@
               <mat-option value="{{ season }}" *ngFor="let season of seasons">{{'lolo.movie.Season' | translate}}: {{ season }}</mat-option>
             </mat-select>
           </mat-form-field>
+          <div></div>
+          <button mat-raised-button color="primary" aria-label="Trailer" (click)="gotolinks()">
+            <mat-icon  class="icon-colored" style="background: white; border-radius: 50%;">play_arrow</mat-icon> Voir
+          </button>
+
+
+
           <h2>{{episodeInfo.name}}</h2>
           <h3 class="parallax-subtitle">{{'lolo.movie.Overview' | translate}}</h3>
           <p>{{episodeInfo.overview}}</p>

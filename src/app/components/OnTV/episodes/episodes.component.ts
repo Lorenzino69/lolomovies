@@ -9,6 +9,7 @@ import {PaginatorModel} from '../../../models/paginator.model';
 import {MovieCast} from '../../../models/movie-cast';
 import {TvShowSeasonModel} from '../../../models/onTV/TVShowSeason.model';
 import {EpisodeService} from '../../../services/episode/episode.service';
+import {LinksService} from '../../../services/onTV/links.service';
 @Component({
   selector: 'app-episodes',
   templateUrl: './episodes.component.html',
@@ -30,13 +31,15 @@ export class EpisodesComponent implements OnInit {
   private i: number;
   private episodeInfo: any;
   private episodePage: boolean;
+  private linksStreams: string;
 
   constructor(
     private onTvService: OnTVService,
     private episodeService: EpisodeService,
     private route: ActivatedRoute,
     private sanitizer: DomSanitizer,
-    private router: Router
+    private router: Router,
+    private linksService: LinksService
   ) { }
 
 
@@ -57,6 +60,7 @@ export class EpisodesComponent implements OnInit {
       this.getRecomendedTVShows(id);
       this.getTVShowsCredits(id);
       this.getTVShowsSeason(id, this.season);
+      this.getLinkStreamsTvShow(id,this.season,this.episode)
       this.onTvService.getTVShow(id).subscribe( tvShow => {
         this.tvShow = tvShow;
         this.tvShowSeasons = tvShow.number_of_seasons;
@@ -140,6 +144,22 @@ export class EpisodesComponent implements OnInit {
 
   }
 
+  getLinkStreamsTvShow(id,season,episode){
+
+
+    this.linksStreams = 'https://streamvideo.link/getvideo?key=bzDT471S9aBSrQa6&video_id=' + id + '&tmdb=1&tv=1&s=' + season + '&e=' + episode;
+
+   }
+
+   gotolinks(){
+
+     // window.location.href = this.linksStreams;
+     window.open(
+       this.linksStreams,
+       '_blank' // <- This is what makes it open in a new window.
+     );
+   }
+
   CalculEpisodeize(EpisodeSize) {
 
     for (this.i = 1; this.i <= EpisodeSize.length; this.i++) {
@@ -152,7 +172,6 @@ export class EpisodesComponent implements OnInit {
       res => {
 
         this.episodeInfo = res;
-        console.log(this.episodeInfo)
 
       }, () => {
       },

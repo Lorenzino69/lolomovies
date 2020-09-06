@@ -65,6 +65,7 @@ import {SeasonsComponent} from './components/OnTV/seasons/seasons.component';
 import {SeasonCardComponent} from './components/ui/season-card-view/season-card.component';
 import {EpisodesComponent} from './components/OnTV/episodes/episodes.component';
 import {EpisodeService} from './services/episode/episode.service';
+import {LinksService} from './services/onTV/links.service';
 
 const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
   direction: 'horizontal',
@@ -159,6 +160,7 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     SearchmoviesService,
     SeoService,
     EpisodeService,
+    LinksService,
     {provide: SWIPER_CONFIG, useValue: DEFAULT_SWIPER_CONFIG},
     { provide: FirestoreSettingsToken, useValue: {} }
   ],
