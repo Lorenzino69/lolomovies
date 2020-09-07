@@ -63,6 +63,8 @@ import {MatOptionModule} from '@angular/material/core';
 import {MatSelectModule} from '@angular/material/select';
 import {SeasonsComponent} from './components/OnTV/seasons/seasons.component';
 import {SeasonCardComponent} from './components/ui/season-card-view/season-card.component';
+import {EpisodesComponent} from './components/OnTV/episodes/episodes.component';
+import {EpisodeService} from './services/episode/episode.service';
 
 const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
   direction: 'horizontal',
@@ -73,33 +75,34 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
 
 @NgModule({
   declarations: [
-    AppComponent,
-    HomeComponent,
-    MovieCardComponent,
-    MovieComponent,
-    GenresComponent,
-    GenresTvComponent,
+    ActorCardComponent,
     ActorComponent,
-    LoginComponent,
-    PageNotFoundComponent,
-    CapitalizePipe,
-    GenresListComponent,
-    RegisterComponent,
-    ModalComponent,
-    AppMovieDialogComponent,
-    SettingsComponent,
-    ProfileComponent,
-    TvShowComponent,
     AllMoviesComponent,
     AllTvShowsComponent,
+    AppComponent,
+    AppMovieDialogComponent,
+    AppTVDialogComponent,
+    CapitalizePipe,
+    EpisodesComponent,
+    GenresComponent,
+    GenresListComponent,
+    GenresTvComponent,
+    HomeComponent,
+    LoginComponent,
     MaterialElevationDirective,
+    ModalComponent,
+    MovieCardComponent,
+    MovieComponent,
+    PageNotFoundComponent,
+    ProfileComponent,
+    RegisterComponent,
     SearchComponent,
     SearchMoviesComponent,
     SearchmoviesComponent,
-    AppTVDialogComponent,
-    ActorCardComponent,
+    SeasonCardComponent,
     SeasonsComponent,
-    SeasonCardComponent
+    SettingsComponent,
+    TvShowComponent
   ],
   imports: [
     BrowserModule,
@@ -154,6 +157,7 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     ActorService,
     SearchmoviesService,
     SeoService,
+    EpisodeService,
     {provide: SWIPER_CONFIG, useValue: DEFAULT_SWIPER_CONFIG},
     { provide: FirestoreSettingsToken, useValue: {} }
   ],

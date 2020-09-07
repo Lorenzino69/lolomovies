@@ -23,7 +23,6 @@ export class ActorService {
 
 
   getActorCast(id: string): Observable<any> {
-    console.log("appel actor :" + id)
     return this.http.get(`${this.baseUrl}person/${id}/movie_credits?api_key=${this.apiKey}&language=${this.language}`)
   }
 

@@ -42,8 +42,6 @@ export class SearchMoviesComponent implements OnInit {
     this.searchService.searchMulti(query, page)
       .subscribe(
         response => {
-          // console.log(response)
-          // response['results']= response['results'].filter(items => (items.backdrop_path !== null) || (items.poster_path !==null))
           this.movies = response['results']
           this.searches = response;
           this.total_results = response['total_results'];

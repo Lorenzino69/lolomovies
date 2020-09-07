@@ -1,0 +1,60 @@
+<div *ngIf="tvShow">
+  <div class="parrallax-content" [ngStyle]="{'background-image': 'linear-gradient(rgba(52,41,49,0.8), rgba(68,34,102,0.8)), url('+'https://image.tmdb.org/t/p/w1280'+tvShow.backdrop_path+')'}">
+    <div class="parrallax">
+    </div>
+
+    <div class="parallax-left-content">
+      <section class="parallax-position">
+        <div class="parallax-img-container">
+          <img src="https://image.tmdb.org/t/p/w500/{{tvShow?.poster_path}}" alt="" width="300px">
+        </div>
+        <div class="parallax-right-content"> <!--Title-->
+          <h2>{{tvShow.name}}&nbsp;&nbsp;{{'lolo.movie.Season' | translate}}&nbsp;{{season}}: &nbsp;&nbsp;{{'lolo.movie.Episode' | translate}}&nbsp;{{episode}}</h2>
+
+          <h2>{{episodeInfo.name}}</h2>
+          <h3 class="parallax-subtitle">{{'lolo.movie.Overview' | translate}}</h3>
+          <p>{{episodeInfo.overview}}</p>
+          <div>
+          </div>
+          <br>
+          <h3 class="parallax-subtitle">Categories</h3>
+          <a *ngFor="let genre of tvShow.genres" routerLink="/genres-tv/{{genre.id}}/{{genre.name}}">
+            <button mat-raised-button color="primary">{{genre.name}}</button>
+          </a>
+        </div>
+      </section>
+      <section class="top-billed-cast">
+        <p class="title-billed">{{'lolo.movie.Top_Billed_Cast' | translate}}</p>
+        <div style="display: flex">
+          <div *ngFor="let actor of cast; let last = last" [ngStyle]="{'border-right': last !== true ? '1px solid #ffffff75' : ''}" style="width: 25%;">
+
+            <a routerLink="/actor/{{actor?.id}}">
+              <div style="display: inline-flex; align-items: center; padding: 0 5px;">
+                <div>
+                  <img mat-card-image src="https://image.tmdb.org/t/p/w500/{{actor?.profile_path}}">
+                  <small style="color: #F44336; font-weight: 500">{{actor.character}}</small>
+                  <p style="margin: 0; font-size: 14px;">{{actor.name}}</p>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+
+  <div class="container">
+    <div class="spacerecommended">
+      <div *ngIf="tvShowSeason" class="similar-movies">
+        <h1>{{'lolo.movie.Season' | translate}}&nbsp;{{season}}:&nbsp;&nbsp;({{episodes_number}})&nbsp;{{'lolo.movie.Episodes' | translate}}</h1>
+        <div style="text-align:center;">
+        <span *ngFor="let tvshows of tvShowSeason;">
+          <app-poster-card [model]="tvshows" class="recommended-poster"></app-poster-card>
+        </span>
+        </div>
+      </div> <!--End Similar Movies-->
+    </div>
+  </div>
+</div>
+

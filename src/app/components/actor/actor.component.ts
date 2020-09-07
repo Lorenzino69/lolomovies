@@ -35,7 +35,6 @@ export class ActorComponent implements OnInit, AfterViewInit {
       const id = params['id'];
       this._moviesSerice.getPersonDetail(id).subscribe(person => {
         this.person = person;
-        console.log(this.person);
       }, error => console.log(error));
       this.actorService.getActorCast(id).subscribe(res => {
         // res.cast = res.cast.filter( item => { return item.backdrop_path });

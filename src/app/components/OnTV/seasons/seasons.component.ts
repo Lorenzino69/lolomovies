@@ -67,7 +67,6 @@ export class SeasonsComponent implements OnInit {
         });
         this.tvShowSeason = res.episodes
 
-        console.log(this.tvShowSeason)
         this.CalculSeasonSize(this.tvShowSeason);
 
       }, () => {
