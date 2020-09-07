@@ -23,12 +23,11 @@
 </a>
 
 
-<a *ngIf="model.episode_number" [routerLink]="'episode/' + model.episode_number">
+<a *ngIf="model.episode_number" [routerLink]="episode ? '/tv-show/'+ id + '/seasons/' + model.season_number + '/episode/' + model.episode_number : 'episode/' + model.episode_number"
+(click)="upPage()">
   <mat-card class="movie-card">
-    <img *ngIf="model.poster_path" mat-card-image src="https://image.tmdb.org/t/p/w300/{{model.poster_path}}" [alt]="model.title ? model.title : model.name">
-    <!--      <img *ngIf="!model.poster_path" mat-card-image src="http://www.catedrauamfujitsu.es/wp-content/themes/invicta/styles/images/defaults/no_photo.jpg" class="movie-header-card" [alt]="model.title ? model.title : model.name">-->
-    <!--    <img *ngIf="!model.poster_path" mat-card-image src="https://placehold.it/500x740" class="movie-header-card" [alt]="model.title ? model.title : model.name">-->
-    <img *ngIf="!model.poster_path && model.still_path" mat-card-image src="https://image.tmdb.org/t/p/w300/{{model.still_path}}" [alt]="model.title ? model.title : model.name">
+    <img *ngIf="model.poster_path" mat-card-image src="https://image.tmdb.org/t/p/w300/{{model.poster_path}}">
+    <img *ngIf="!model.poster_path && model.still_path" mat-card-image src="https://image.tmdb.org/t/p/w300/{{model.still_path}}">
     <img *ngIf="!model.poster_path && !model.still_path" mat-card-image src="https://placehold.it/500x740" class="movie-header-card">
 
     <mat-card-content>

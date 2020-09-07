@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, NavigationEnd, Router} from '@angular/router';
 import {TvShowModel} from '../../../models/onTV/tvShow.model';
 import {OnTVService} from '../../../services/onTV/onTV.service';
 import {TvShowSeasonModel} from '../../../models/onTV/TVShowSeason.model';
@@ -18,8 +18,10 @@ export class SeasonsComponent implements OnInit {
   private id: any;
   private episodes_number: number;
   private i: number;
+  private seasonSize: number;
+  seasons = [];
 
-  constructor(private onTvService: OnTVService, private route: ActivatedRoute) {
+  constructor(private onTvService: OnTVService, private route: ActivatedRoute,private router: Router) {
 
   }
 
@@ -30,6 +32,8 @@ export class SeasonsComponent implements OnInit {
       const seasons = params['seasons'];
       this.onTvService.getTVShow(id).subscribe(tvShow => {
         this.tvShow = tvShow;
+        this.seasonSize = tvShow.number_of_seasons;
+        this.CalculSeasonSize(this.seasonSize);
       });
       this.id = id;
       this.season = seasons;
@@ -37,7 +41,12 @@ export class SeasonsComponent implements OnInit {
       this.getTVShowsSeason(id, seasons);
       this.getTVShowsCredits(id);
 
-
+      this.router.events.subscribe((evt) => {
+        if (!(evt instanceof NavigationEnd)) {
+          return;
+        }
+        window.scrollTo(0, 0)
+      });
     });
   }
 
@@ -65,9 +74,10 @@ export class SeasonsComponent implements OnInit {
         res.episodes = res.episodes.filter(item => {
           return item
         });
+
         this.tvShowSeason = res.episodes
 
-        this.CalculSeasonSize(this.tvShowSeason);
+        this.CalculEpisodeSize(this.tvShowSeason);
 
       }, () => {
       },
@@ -79,10 +89,26 @@ export class SeasonsComponent implements OnInit {
     );
   }
 
-  CalculSeasonSize(EpisodeSize) {
+  upOnRouting(){
+    window.scrollTo(0, 0)
+  }
 
-    for (this.i = 0; this.i < EpisodeSize.length; this.i++) {
+  CalculEpisodeSize(EpisodeSize) {
+
+    for (this.i = 1; this.i <= EpisodeSize.length; this.i++) {
       this.episodes_number = this.i;
     }
+  }
+
+  CalculSeasonSize(SeasonSize){
+  this.seasons = [];
+    for(this.i = 1 ; this.i <=SeasonSize; this.i++){
+      this.seasons.push(this.i)
+    }
+  }
+
+  navigateTo(value,id){
+    this.router.navigate(['/tv-show',id,'seasons',value]);
+
   }
 }

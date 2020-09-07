@@ -1,7 +1,7 @@
 import {Component, ElementRef, Inject, OnInit, ViewChild} from '@angular/core';
 import {TvShowModel} from '../../../models/onTV/tvShow.model';
 import {OnTVService} from '../../../services/onTV/onTV.service';
-import {ActivatedRoute, Router} from '@angular/router';
+import {ActivatedRoute, NavigationEnd, Router} from '@angular/router';
 import {DomSanitizer} from '@angular/platform-browser';
 import {MovieVideo} from '../../../models/movie-video';
 import {MAT_DIALOG_DATA, MatDialog, MatDialogRef} from '@angular/material/dialog';
@@ -29,13 +29,13 @@ export class EpisodesComponent implements OnInit {
   private episode: number;
   private i: number;
   private episodeInfo: any;
+  private episodePage: boolean;
 
   constructor(
     private onTvService: OnTVService,
     private episodeService: EpisodeService,
     private route: ActivatedRoute,
     private sanitizer: DomSanitizer,
-    public dialog: MatDialog,
     private router: Router
   ) { }
 
@@ -51,6 +51,7 @@ export class EpisodesComponent implements OnInit {
       const episode = params['episode']
       this.episode = episode
       this.season = season
+      this.episodePage = true;
       this.GetEpisode(id,this.season,this.episode);
       this.getMovieVideo(id);
       this.getRecomendedTVShows(id);
@@ -67,8 +68,12 @@ export class EpisodesComponent implements OnInit {
         }
       });
 
-
     });
+  }
+
+  navigateTo(value,id){
+    this.router.navigate(['/tv-show',id,'seasons',value]);
+
   }
 
   CalculSeasonSize(SeasonSize){
@@ -76,11 +81,6 @@ export class EpisodesComponent implements OnInit {
     for(this.i = 1 ; this.i <=SeasonSize; this.i++){
       this.seasons.push(this.i)
     }
-  }
-
-  navigateTo(value,id){
-    this.router.navigate(['/tv-show',id,'seasons',value]);
-
   }
 
   getMovieVideo(id) {
@@ -136,9 +136,13 @@ export class EpisodesComponent implements OnInit {
     );
   }
 
+  upOnRouting(){
+
+  }
+
   CalculEpisodeize(EpisodeSize) {
 
-    for (this.i = 0; this.i < EpisodeSize.length; this.i++) {
+    for (this.i = 1; this.i <= EpisodeSize.length; this.i++) {
       this.episodes_number = this.i;
     }
   }

@@ -10,6 +10,12 @@
         </div>
         <div class="parallax-right-content"> <!--Title-->
           <h2>{{tvShow.name}}&nbsp;&nbsp;{{'lolo.movie.Season' | translate}}&nbsp;{{season}}</h2>
+          <mat-form-field appearance="fill">
+            <mat-label>{{'lolo.movie.Seasons' | translate}}</mat-label>
+            <mat-select (selectionChange)="navigateTo($event.value,tvShow.id)">
+              <mat-option value="{{ season }}" *ngFor="let season of seasons">{{'lolo.movie.Season' | translate}}: {{ season }}</mat-option>
+            </mat-select>
+          </mat-form-field>
           <h3 class="parallax-subtitle">{{'lolo.movie.Overview' | translate}}</h3>
           <p>{{tvShow.overview}}</p>
           <div>
@@ -48,7 +54,7 @@
         <h1>{{'lolo.movie.Season' | translate}}&nbsp;{{season}}:&nbsp;&nbsp;({{episodes_number}})&nbsp;{{'lolo.movie.Episodes' | translate}}</h1>
         <div style="text-align:center;">
         <span *ngFor="let tvshows of tvShowSeason;">
-          <app-poster-card [model]="tvshows" class="recommended-poster"></app-poster-card>
+          <app-poster-card [model]="tvshows" class="recommended-poster" (click)="upOnRouting()"></app-poster-card>
         </span>
         </div>
       </div> <!--End Similar Movies-->

@@ -134,6 +134,7 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     MatExpansionModule,
     SwiperModule,
     FlexLayoutModule,
+    RouterModule.forRoot(appRoutes, {scrollPositionRestoration: 'enabled'}),
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,

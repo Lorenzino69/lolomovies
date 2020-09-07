@@ -14,8 +14,8 @@ export class EpisodeService {
   constructor(private http: HttpClient, private translate: TranslateService) {
     this.baseUrl = 'https://api.themoviedb.org/3/';
     this.apiKey = '9ebeb1f5074a5a0edbddc22b59b8f97a';
-    this.language = 'en-US';
-    this.region = 'US'
+    this.language = 'fr-Fr';
+    this.region = 'FR'
     this.translate.onLangChange.subscribe((lang) => {
       this.language = this.translate.currentLang;
     });
