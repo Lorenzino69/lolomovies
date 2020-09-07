@@ -18,6 +18,7 @@ export class SearchMoviesComponent implements OnInit {
   query: string;
   language: string;
   sort: number;
+  private elementsFiltered: any;
 
   constructor(
     private searchService: SearchService,
@@ -31,51 +32,25 @@ export class SearchMoviesComponent implements OnInit {
       params => {
         this.query = params['query'];
         this.page = 1;
-        // this.searchMovies(this.query, this.page);
-        // this.searchTvShows(this.query, this.page);
         this.searchMulti(this.query, this.page);
       });
   }
 
-  searchMovies(query: string, page: number) {
-    this.searchService.searchMovies(query, page)
-      .subscribe(
-        response => {
-          this.searches = response;
-          this.movies = response['results'];
-          this.total_results = response['total_results'];
-          this.total_pages = response['total_pages'];
-          this.page = response['page'];
-        },
-        error => console.error(error)
-      );
-  }
 
-  searchTvShows(query: string, page: number) {
-    this.searchService.searchTvShows(query, page)
-      .subscribe(
-        response => {
-          this.searches = response;
-          this.movies = response['results'];
-          this.total_results = response['total_results'];
-          this.total_pages = response['total_pages'];
-          this.page = response['page'];
-        },
-        error => console.error(error)
-      );
-  }
 
   searchMulti(query: string, page: number) {
     this.searchService.searchMulti(query, page)
       .subscribe(
         response => {
+          // console.log(response)
+          // response['results']= response['results'].filter(items => (items.backdrop_path !== null) || (items.poster_path !==null))
+          this.movies = response['results']
           this.searches = response;
-          this.movies = response['results'];
           this.total_results = response['total_results'];
           this.total_pages = response['total_pages'];
           this.page = response['page'];
 
-          console.log(this.movies)
+
         },
         error => console.error(error)
       );

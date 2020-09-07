@@ -19,7 +19,6 @@
   </mat-toolbar>
   <br>
   <div class="ui link five doubling cards">
-<!--    <div class="card" *ngFor="let movie of movies" [routerLink]="['/movie/'+movie.id]" routerLinkActive="active">-->
     <div class="card" *ngFor="let movie of movies" [routerLink]="[movie.original_title ? ['/movie/'] + movie.id : ['/tv-show/'] + movie.id]" routerLinkActive="active">
 
         <div class="image">
@@ -29,7 +28,8 @@
         </div>
         <div class="content">
           <div class="header">
-            {{ movie.title }}
+            <span *ngIf="movie.title">{{ movie.title }}</span>
+            <span *ngIf="!movie.release_date">{{ movie.original_name }}</span>
           </div>
 
           <div class="description">
@@ -48,7 +48,8 @@
           </h3>
 
         </span>
-          {{ movie.release_date }}
+          <span *ngIf="movie.release_date">{{ movie.release_date }}</span>
+          <span *ngIf="!movie.release_date">{{ movie.first_air_date }}</span>
         </div>
     </div>
   </div>
